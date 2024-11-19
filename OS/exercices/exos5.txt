@@ -1,0 +1,31 @@
+Exercice 1 : Dans les premières versions d'UNIX, les fichiers exécutables (les fichiers a.out) commençaient par un nombre particulier, appelé nombre magique (magic number), qui n'était pas choisi au hasard. Ces fichiers débutaient par un en-tête, suivi des segments de texte et de données. Selon vous, pour quelle raison attribuait-on à ces fichiers un nombre magique spécifique alors que ce nombre magique était plus ou moins aléatoire pour les autres fichiers ?
+	Ce numéro permettait d'identifier plus facilement le fichier concerné à des fins de débogage.
+
+Exercice 2 : L'appel système open est-il absolument essentiel sous UNIX ? Quelles seraient les conséquences s'il n'existait pas ?
+	Sans cet appel système, impossible de charger les attributs d'un fichier ce qui est essentiel. Cette absence ne permettrait pas de gérer les droits, de connaître le nombre de liens qui pointent sur ce fichier (et par là même de savoir si ce fichier doit encore être référencé) ou encore de connaître la taille du fichier et de dimensionner correctement un buffer pour le lire.
+
+Exercice 3 : Certains systèmes d'exploitation proposent un appel système rename pour donner un nouveau nom au fichier. Existe-t-il une différence entre cette opération et celle qui consiste à faire une copie du fichier dans un nouveau fichier avec un nouveau nom et à ensuite effacer le premier fichier ?
+	L'appel système rename se contente uniquement de modifier l'identifiant du fichier qu'est le nom. Renommer un fichier sans avoir recours à cet appel implique plusieurs opérations différentes ce qui est plus couteux.
+
+Exercice 4 : Pour utiliser une allocation contiguë de fichiers sans pâtir des trous, il est possible de compacter le disque chaque fois qu'un fichier est effacé. Comme tous les fichiers sont contigus, la copie d'un fichier implique un déplacement et un délai de rotation pour lire le fichier, puis un transfert à pleine vitesse. De même pour la réécriture du fichier. En supposant que le temps de déplacement est de 5 ms, que le délai de rotation est de 4 ms, que le taux de transfert est de 8 Mo/s et que la taille moyenne d'un fichier est de 8 Ko, combien de temps faut-il pour lire un fichier depuis le disque vers la mémoire et le réécrire dans un autre emplacement disque ? Avec ces mêmes paramètres, combien de temps prendrait la défragmentation (c'est-à-dire le compactage) de la moitié d'un disque de 16 Go ?
+	Accès au fichier: 5 + 4 = 9ms.
+	Temps de transfert du fichier: 8000 / 8000000 = 0.001 s -> 1ms.
+	Lecture ou écriture: 10 ms
+	Opération complète: 20ms
+
+	La moitié d'un disque de 16Go fait 8 Go
+	Temps de transfert des fichiers = 8 Go / 8 Mo = 8000 secondes -> 2 minutes 13 secondes
+	Opération complète avec les temps d'accès aux fichiers: 4 minutes 26 secondes 18 ms
+
+Exercice 5 : Au vu des résultats de la question précédente, est-il raisonnable de défragmenter le disque ?
+	4 minutes et demie pour gagner en performances et en espace sur le disque semble raisonnable.
+
+Exercice 6 : Suggérons l'idée de garder la première partie de chaque fichier UNIX dans le même bloc de disque que son i-node. Quel en serait l'avantage ?
+	Une telle disposition permettrait d'accéder plus rapidement aux attributs de fichiers et rendrait donc l'ouverture de ces fichiers plus rapide.
+
+Exercice 7 : Un système de fichiers UNIX a des blocs de 1 Ko et des adresses disque sur 4 octets. Quelle est la taille maximale d'un fichier si les i-nodes contiennent 10 entrées directes et une simple indirection, une double indirection et une triple indirection pour chaque fichier ?
+	Simple indirection: 10 * 1 Ko -> 10 Ko
+	Double indirection: 2 ^ 10 * 1 Ko -> 100 Ko
+	Triple indirection: 3 ^ 10 * 1 Ko -> 1 Mo
+
+Exercice 8 : Écrivez un programme qui scrute tous les répertoires d'un système de fichiers UNIX, trouve tous les i-nodes qui possèdent un compteur de liens physiques de 2 ou plus. Pour chaque fichier de ce type, il rassemble dans une même liste tous les noms de fichiers qui pointent sur le fichier. 

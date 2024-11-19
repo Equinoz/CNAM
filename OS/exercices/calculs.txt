@@ -1,0 +1,143 @@
+* Un ordinateur possède un pipeline à quatre niveaux. Chaque niveau met le même temps (1 ns) à s’exécuter. Combien d’instruction par seconde cette machine est-elle capable d’exécuter ?
+	Un pipeline à quatre niveaux permet de traiter simultanément 4 instructions a des stades différents de traitement. Le fait qu'il y ait plus de niveaux ne permet pas à l'instruction elle-même d'être traitée plus rapidement, par contre le débit du processeur est accéléré. Si le dernier niveau prend 1 ns, Une nouvelle instruction est traitée chaque ns. Donc 1 milliard d'instruction peuvent être traitées en une seconde.
+
+
+* Un relecteur remarque une faute d’orthographe répétée dans un ouvrage. Le livre fait à peu près 700 pages, contenant chacune 50 lignes de 80 caractères. Combien de temps prendra la vérification électronique du livre entier, si on suppose que la totalité du texte est (tour à tour) dans chacun des niveaux suivants : On considèrera pour les méthodes de stockage interne que le temps d’accès est donné par caractères ; pour les disques, on le supposera donné par bloc de 1024 caractères ; pour les bandes et les cartouches le temps donné est celui pris pour atteindre les données lors du premier accès, les accès suivants se faisant dans le même temps que pour les disques.
+	700 pages * 50 lignes * 80 caractères = 2800000 caractères
+	- Registres: 2.8 millisecondes
+	- Cache: 5.6 millisecondes
+	- RAM: 28 millisecondes
+	- Disque magnétique: 27.343 secondes
+	- Bande magnétique: 2 minutes 7.343 secondes
+
+
+* "Les mesures relevées sur un système donné ont montré que la durée moyenne d’exécution d’un processus était de T avant que ne se produise un blocage sur les E/S. Un changement de processus a besoin d'un délai S que l'on peut considérer comme une perte de temps. Pour un algorithme d'ordonnancement de type tourniquet avec un quantum Q, donnez une formule pour exprimer l'efficacité de l'UC pour chacun des cas suivants :
+a. Q= 8
+b. Q>T
+c. S < Q < T
+d. Q=S
+e. Q proche de 0
+	Efficacité = Temps utile / temps total
+	Le temps utile est le temps requis pour executer le processus
+	Le temps total est le temps utile + les changements de contexte
+	Donc pour Q > T le processus s'exécute le temps du quantum, il n'y a qu'un changement de contexte
+	a. b. E = T / (T + S)
+	Si le quantum est plus court que le temps utile il y aura plusieurs changements de contexte
+	c. E = T / T + T % Q * S -> T / T + T / Q * S -> T / T + ST / Q
+	Si S = Q
+	d. T / T + ST / Q -> T / T + QT / Q -> T / T + T -> T / 2T -> 1 / 2 -> 50%
+	e. Q tend vers 0, l'éfficacité tend vers 0
+
+
+* Cinq jobs sont en attente d'exécution. Leurs délais d'exécution sont respectivement de 9, 6, 3, 5 et X minutes. Dans quel ordre faut-il les exécuter pour réduire le temps de réponse moyen ? Votre réponse dépendra de X.
+	A priorité comparable, il faut les classer du plus rapide au plus long. Il faut donc placer X entre deux jobs, celui qui est immédiatement plus rapide et celui qui est immédiatement plus long.
+
+
+* Un système de va-et-vient élimine la fragmentation externe grâce au compactage. Supposons une distribution aléatoire de nombreux vides et de nombreuses zones de données et un temps de lecture ou d'écriture de 10 ns pour un mot mémoire de 32 bits. Combien de temps processeur sera nécessaire pour compacter 128 Mo ? Pour simplifier, nous supposons que le mot d'adresse 0 fait partie d'une zone vide et que le mot le plus haut dans la mémoire contient une donnée valide.
+	32 bits font 4 octets, 10 ns de lecture et d'écriture pour un mot mémoire: 5 ns pour un octet
+	128 Mo = 134217728o multiplié par 0.000000005 secondes fait donc 0,671 secondes
+
+
+* Dans ce problème, vous devez comparer l'espace de stockage nécessaire pour mémoriser la mémoire libre, d'une part avec une table de bits, d'autre part avec une liste chaînée. La mémoire de 128 Mo est allouée par unités de n octets. Pour la liste chaînée, nous supposons que la mémoire est constituée de segments de 64 Ko en alternance avec des zones vides de taille identique. Nous admettons également que chaque nœud de cette liste nécessite une adresse mémoire de 32 bits, une longueur de 16 bits et un champ de 16 bits pour le prochain nœud. Quelle est la taille de stockage nécessaire pour chaque méthode ? Laquelle est la meilleure ?
+	Table de bits: un bit représente un octet -> 128 Mo équivaut à 2^27 octets on a donc besoin de 2^27 bits pour les stocker. 2^27 bits vaut 2^24 octets soit 16 Mo
+	Liste chaînée: 128Mo -> 131072 Ko. 131072 / 64 -> 2048 segments. Ces segments font au total 2048 x 64 bits (32 bits + 16 bits + 16 bits = 8 octets) soit 16 Ko
+	La liste chaînée est préférable. Si les unités de n octets sont importantes, il vaut mieux une table de bits.
+
+
+* La quantité d'espace disque qui doit être disponible pour stocker des pages est liée au nombre maximum de processus, N, au nombre d'octets de l'espace d'adressage virtuel, V, et au nombre d'octets de la RAM, R. Imaginez le cas le plus défavorable pour l'espace disque requis et donnez-en une expression. Cette valeur est-elle réaliste ?
+	Espace d'adressage virtuel total -> nv. On dispose de la RAM, donc la mémoire nécéssaire est ce que la RAM ne permet pas de fournir soit -> nv - r.
+	Il est peu probable que tant de processus soient actifs au même moment et qu'il nécéssitent tous en même temps de la quantité maximale de mémoire.
+
+
+* Un ordinateur ayant des adresses 32 bits utilise une table des pages à deux niveaux. Les adresses virtuelles ont trois parties : un champ de 9 bits qui représente le premier niveau, un champ de 11 bits qui représente le second niveau, et un déplacement. De quelle taille sont les pages ? Combien en existe-t-il dans l'espace d'adressage ? 
+	Une page est définie sur 20 bits (9 + 11) il reste donc 12 bits pour le décalage. Dans l'intervalle d'un décalage on a donc une place de 12 bits pour définir une page, un octet par bit soit 2^12 -> 4096 o -> 4 Ko
+	20 bits par page virtuelle donne 2^20 pages, une page par octet
+
+
+* Combien de temps faudra-t-il pour charger un programme de 64 Ko depuis un disque dont le temps moyen de recherche est de 10 ms et le temps de rotation de 10 ms, et dont les pistes font 32 Ko :
+a. Pour des pages de 2 Ko ?
+b. Pour des pages de 4 Ko ?
+
+On considère que les pages sont aléatoirement réparties sur le disque et que la probabilité que deux pages soient sur le même cylindre est négligeable.
+	Temps de rotation + recherche dans les deux cas = 10ms + 10ms
+	a) Temps de transfert pour une page de 2Ko -> 10 / 32 * 2 -> 1.25ms. 21.25ms par page, il faut donc 32 pages soit 680ms
+	b) Temps de transfert pour une page de 4Ko -> 10 / 32 * 4 -> 2.5ms. 22.5ms par page, il faut donc 16 pages soit 360ms
+
+
+* Nous avons constaté que le nombre d'instructions exécutées entre des défauts de pages est directement proportionnel au nombre de cases mémoire allouées au programme. Si la mémoire disponible est doublée, l'intervalle moyen entre des défauts de pages successifs est aussi doublé. Supposons qu'une instruction normale prenne 1 μs, mais que si un défaut de page se produit, elle prenne 2 001 μs. Si un programme prend 60 s pour s'exécuter en produisant 15 000 défauts de pages, quelle serait sa durée d'exécution s'il y avait deux fois plus de mémoire disponible ?
+	Intervalle moyen entre deux défauts de page: 60s / 15000 = 250 μs
+	Le temps d'execution d'une instruction est plus long que l'intervalle entre deux défauts de pages.A chaque défaut de page il y a donc une seule instruction de 2001 μs d'éxécutée.
+	Temps d'éxécution lié aux instructions pendant les défauts de page: 15000 * 2001 -> 30015000 μs
+	Temps d'éxécution lié aux instructions normales: 60000000 - 30015000 = 29985000 μs donc 29985000 instructions.
+	29985000 instructions normales + 15000 instructions pendant les défauts de pages = 30000000
+
+	Si on double la mémoire on aura donc deux fois moins de défauts de pages avec des intervalles deux fois plus longs: 500 μs.
+	Le temps d'execution d'une instruction est toujours plus long que l'intervalle entre deux défauts de page.
+	Temps d'éxécution lié aux instructions pendant les défauts de page: 7500 * 2001 -> 15007500 μs
+	Nombres d'instructions restantes: 30000000 - 7500 = 29992500 instructions donc 29992500 μs 
+	Donc le temps total d'éxécution avec deux fois plus de mémoire sera de 15007500 μs + 29992500 μs = 45 secondes
+
+
+* Pour utiliser une allocation contiguë de fichiers sans pâtir des trous, il est possible de compacter le disque chaque fois qu'un fichier est effacé. Comme tous les fichiers sont contigus, la copie d'un fichier implique un déplacement et un délai de rotation pour lire le fichier, puis un transfert à pleine vitesse. De même pour la réécriture du fichier. En supposant que le temps de déplacement est de 5 ms, que le délai de rotation est de 4 ms, que le taux de transfert est de 8 Mo/s et que la taille moyenne d'un fichier est de 8 Ko, combien de temps faut-il pour lire un fichier depuis le disque vers la mémoire et le réécrire dans un autre emplacement disque ? Avec ces mêmes paramètres, combien de temps prendrait la défragmentation (c'est-à-dire le compactage) de la moitié d'un disque de 16 Go ?
+	Accès au fichier: 5 + 4 = 9ms. Temps de transfert du fichier: 8192 / 8388608 = 0.0009765625 s -> 0.9765 ms (2^-10s). Lecture ou écriture: 9.9765 ms
+	Opération complète: 19.953 ms
+	La moitié d'un disque de 16Go fait 8 Go
+	8Go par fichiers de 8Ko 2^33 / 2^13 soit 2^20 opérations de 19.953 ms 20922 secondes soit 5,8H
+
+
+* Un système de fichiers UNIX a des blocs de 1 Ko et des adresses disque sur 4 octets. Quelle est la taille maximale d'un fichier si les i-nodes contiennent 10 entrées directes et une simple indirection, une double indirection et une triple indirection pour chaque fichier ?
+	Chaque bloc peut contenir 1Ko / 4 octets -> 256 adresses disques.
+	Une redirection simple contient 256 pointeurs, une double 256^2 et une triple 256^3
+	256 pointeurs + 256^2 + 256^3 + 10 entrées par i-node -> 16843018 pointeurs
+	16843018 pointeurs x 1 Ko -> 16843018 Ko -> 16.06 Go
+
+
+* Écrivez un programme qui scrute tous les répertoires d'un système de fichiers UNIX, trouve tous les i-nodes qui possèdent un compteur de liens physiques de 2 ou plus. Pour chaque fichier de ce type, il rassemble dans une même liste tous les noms de fichiers qui pointent sur le fichier.
+	Parcourir la table des inodes avec une boucle for.
+	Pour chaque inode parcourir la table avec une boucle for imbriquée et incrémenter un compteur si il y a un lien physique, si le compteur passe à plus de deux, une fois l'itération terminée sauvegarder l'élément dans un tableau avec le nombre de liens, le numéro d'inode et le nom du fichier.
+	Lister le contenu de ce tableau nouvellement créé avec une nouvelle boucle for. 
+
+
+* Compte tenu des vitesses listées dans le tableau ci-dessous est-il possible de numériser des documents depuis un scanneur et de les transmettre sur un réseau 802.11 g à pleine vitesse Argumentez.
+	Un scanner est capable de débiter 400 Ko/s de données. Un réseau 802.11g est capable de supporter 6,75Mo/s de données: sa capacité est bien supérieure (plus de 17 fois), donc le goulot d'étranglement se situe au niveau du scanner, le transfert de données ne sera pas limité par le réseau 802.11 g. Le scanner transmettra ses données à pleine vitesse.
+
+
+* Supposez qu'un système utilise un accès direct à la mémoire (DMA) pour le transfert de données entre le contrôleur de disque et la mémoire principale. Supposez également qu'il prenne t1 nanosecondes en moyenne pour acquérir le bus et t nanosecondes pour transférer un mot sur le bus (t1 >> t2). Après que le processeur a programmé le contrôleur de DMA, combien de temps faut-il pour transférer 1 000 mots depuis le contrôleur de disque vers la mémoire principale, si (a) le mode un seul mot à la fois est utilisé, (b) le mode rafale est utilisé ? Supposez que l'envoi d'une commande au contrôleur de disque requière l'acquisition du bus pour envoyer un mot et que l'envoi de l'accusé de réception d'un transfert requière également l'acquisition du bus pour envoyer un mot.
+	a) t1 pour acquérir le bus + t2 pour transférer un mot. Pour chacun des mots (1000), il faut envoyer la commande au contrôleur de disque, transférer le mot et enfin accusé reception. On a donc 1000 x 3 x (t1 + t2) nanosecondes. Donc 3000(t1 + t2) ns. 
+	b) Envoi de la commande au contrôleur de disque (t1 + t2), le contrôleur de disque acquiert le bus (t1), transfert en mode rafale (1000 x t2) et enfin accusé de réception (t1 + t2). Donc 3 x t1 + 1002 x t2 ns.
+
+
+* Une page de texte imprimée classique contient 50 lignes de 80 caractères chacune. Imaginez qu'une imprimante donnée puisse imprimer 6 pages/minute et que le temps d'écrire un caractère dans le registre de sortie de l'imprimante soit si court qu'il puisse être ignoré. Est-il logique d'exécuter cette impression avec des E/S pilotées par les interruptions si chaque caractère imprimé demande une interruption qui prend 50 μs en tout ?
+	50 x 80 x 6 = 24000 caractères par minutes. 24000 caractères/min = 400 caractères/sec. 400 x 50 μs -> 20 ms. 980 ms peuvent être affectées à d'autres tâches. Avec un taux d'occupation de 2% du processeur l'impact est négligeable donc oui c'est logique.
+
+
+Un réseau local est exploité de la manière suivante. L'utilisateur émet un appel système pour écrire des paquets de données sur le réseau. Le système d'exploitation les copie ensuite dans une mémoire tampon du noyau, puis sur la carte contrôleur réseau. Lorsque tous les octets se trouvent en sécurité dans le contrôleur ils sont envoyés sur le réseau à une vitesse de 10 Mb/s. Le contrôleur réseau destinataire stocke chaque bit une microseconde après son envoi·. Lorsque le dernier bit se présente, le processeur de destination est interrompu et le noyau copie le nouveau paquet dans une mémoire tampon du noyau pour l'analyser. Une fois qu'il a compris à qui est destiné le paquet, le noyau copie les données dans l’espace utilisateur. Si nous supposons que chaque interruption et le traitement qui lui est associé prennent 1 ms, que la taille des paquets (en ignorant les entêtes) est de 1 024 octets et que la copie d'un octet s'effectue en 1 μs, quelle est la vitesse maximum à laquelle un processus pompe les données dans un autre ? Supposez que l'expéditeur reste bloqué tant que le travail n'est pas terminé du côté réception et qu'il n'ait pas reçu un acquittement en retour. Pour simplifier le problème, supposez que le délai de réception de la confirmation est suffisamment court pour être ignoré.
+	Durant ce processus on copie 4 fois le paquet. La copie d'un octet prend 1μs, donc les opérations de copie prennent 4 x 1024 x 1 = 4.096ms. 2 interruptions: 2ms
+	Le réseau transmet les informations à 10Mb/s. 1024o font 8192 bits
+	8192 bits sont donc transmis en 0.098ms + 1μs de stockage pour chaque bit, 8192μs = 8.2ms donc 8.3ms
+	Soit un total de 4.096ms + 2ms + 8.3ms = 14.4ms pour copier 1024 octets.
+	Un octet est donc copié en 1024/14.4/1000 soit 71ms
+
+
+* Des requêtes de disque parviennent au pilote de disque pour les cylindres 10, 22, 20, 2, 40, 6 et 38, dans cet ordre. Un positionnement prend 6 ms par cylindre. Quel est le temps de positionnement nécessaire si l'on suit les méthodes suivantes : Dans tous les cas, le bras se trouve à l'origine au-dessus du cylindre 20.
+a. Premier arrivé, premier servi.
+b. Plus proche en premier.
+c. L'algorithme de l'ascenseur (déplacement vers le haut en premier).
+	a) 10 + 12 + 2 + 18 + 38 + 34 + 32 = 146 x 6 ms -> 876 ms -> 0.88 seconde
+	b) 0 + 2 + 12 + 4 + 4 + 36 + 2 = 60 x 6 ms -> 360 ms -> 0.36 seconde
+	c) 0 + 2 + 16 + 2 + 30 + 4 + 4 = 58 x 6 ms -> 348 ms -> 0.35 seconde
+
+
+* Le gestionnaire d'interruptions de l'horloge d'un ordinateur donné nécessite 2 ms (y compris le temps système nécessaire au basculement de processus) par top d'horloge. L'horloge fonctionne à 50 Hz. Quel pourcentage du processeur est dédié au traitement l'horloge ?
+	Pour une fréquence de 50 Hz il y a 50 tops en une seconde 2ms -> 0.002 s. 0.002 x 50 -> 0.1 seconde de temps dédié à l'horloge 0.1 seconde pour une seconde représente donc 10% du temps de processeur
+
+
+* De nombreuses versions d'UNIX utilisent un entier 32 bits non signé pour suivre l'heure sous la forme d'un nombre de secondes écoulées depuis l'origine du temps. Quand ces systèmes vont-ils boucler (année et mois) ? Pensez-vous que cela se produira réellement ?
+	Valeur maximale pour un entier codé sur 32bits -> 4294967294. Soit autant de secondes. 4294967294 secondes vaut 136 ans et 70 jours. 1er janvier 1970 + 136 ans 70 jours -> 2106 au mois de mars.
+	Ce bug serait comparable au bug de l'an 2000 qui n'a jamais eu lieu. Au lieu d'être stocké sous 32 bits, les systèmes stockeront cette heure sous 64 bits, ce qui repoussera le problème pour un bon moment.
+
+
+# Un système contient 4 processus et 5 ressources disponibles. Voici comment elles sont attribuées et quels sont les besoins maximums : Quelle est la plus petite valeur de x pour laquelle l'état est sûr ?
+
+
+# Écrivez un programme qui détecte s'il y a un interblocage dans le système en utilisant un graphe d'allocation des ressources. Ce programme lit dans un fichier le nombre de processus et le nombre de ressources. Pour chaque processus, il lit ensuite : le nombre de ressources que le processus possède actuellement, les identificateurs de ces ressources, le nombre de ressources dont il a besoin et leurs identificateurs. En sortie, le programme doit indiquer s'il y a interblocage et, dans ce cas, il doit imprimer la liste des processus qui y participent.

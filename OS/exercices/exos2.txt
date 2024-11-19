@@ -1,0 +1,14 @@
+Exercice 1 : Nous avons vu en cours que des appels système UNIX sont sans équivalent Win32. Quelle est la conséquence pour un programmeur qui veut convertir un programme UNIX à Windows ?
+	Une partie du programme doit être adaptée au système d'exploitation cible. Cela peut se faire grâce à la compilation conditionnelle pour les langages de bas niveau comme le C. Certains langages de haut niveau gèrent cette différence eux-mêmes.
+
+
+Exercice 2 : Quelle est la différence majeure entre un fichier spécial en mode bloc et un autre en mode caractère ?
+	Un fichier spécial en mode caractère va plus particulièrement permettre de gérer des périphériques traitant des flux de caractères là ou le fichier spécial en mode bloc va gérer des données sous formes de blocs indépendants du système de fichiers.
+
+
+Exercice 3 : Pour un programmeur, un appel système ressemble à n'importe quel appel à une procédure. Est-ce important pour lui de savoir quelles procédures déclenchent effectivement un appel système ? Dans quels cas et pourquoi ?
+	Il est important de savoir quelles sont les procédures déclenchant des appels systèmes, car ces appels peuvent échouer. Dans un tel cas il est important de prévoir le comportement du programme si l'appel en question n'a pas pu être correctement exécuté au risque de voir le processus crasher (par exemple tenter d'écrire dans un fichier qui n'existe pas).
+
+
+Exercice 4 : On dit qu'un système d'exploitation est portable s'il peut être porté (installé) sur une machine ou sur une autre sans modification. Expliquez pourquoi il est impossible de concevoir un système d'exploitation qui soit totalement portable. Décrivez deux couches de haut niveau à concevoir pour avoir un SE à haut degré de portabilité.     
+	Les architectures peuvent varier selon les machines, le code du système d'exploitation est fortement lié à une architecture donnée, il ne peut donc pas être porté sans adaptations. L'émulation et la virtualisation avec un hyperviseur de type 1 peuvent permettre de s'affranchir des spécificités de chaque architecture pour faire fonctionner un système d'exploitation "portable".

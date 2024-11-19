@@ -1,0 +1,55 @@
+Exercice 1 : Compte tenu des vitesses listées dans le tableau ci-dessous est-il possible de numériser des documents depuis un scanneur et de les transmettre sur un réseau 802.11 g à pleine vitesse Argumentez.
+	Un scanner est capable de débiter 400 Ko/s de données. Un réseau 802.11g est capable de supporter 6,75Mo/s de données: sa capacité est bien supérieure (plus de 17 fois), donc le goulot d'étranglement se situe au niveau du scanner, le transfert de données ne sera pas limité par le réseau 802.11 g. Le scanner transmettra ses données à pleine vitesse.
+
+Exercice 2 : Supposez qu'un système utilise un accès direct à la mémoire (DMA) pour le transfert de données entre le contrôleur de disque et la mémoire principale. Supposez également qu'il prenne t1 nanosecondes en moyenne pour acquérir le bus et t nanosecondes pour transférer un mot sur le bus (t1 >> t2). Après que le processeur a programmé le contrôleur de DMA, combien de temps faut-il pour transférer 1 000 mots depuis le contrôleur de disque vers la mémoire principale, si (a) le mode un seul mot à la fois est utilisé, (b) le mode rafale est utilisé ? Supposez que l'envoi d'une commande au contrôleur de disque requière l'acquisition du bus pour envoyer un mot et que l'envoi de l'accusé de réception d'un transfert requière également l'acquisition du bus pour envoyer un mot.
+	a) 1000 mots envoyés + 1000 accusés de réception: 2000 acquisitions de temps t1. 1000 transferts de mots de temps t2 -> 2 x t1 μs + 1 x t2 μs 
+	b) En mode rafale il n'y aura que deux acquisitions: un envoi et un accusé de réception. Le temps de transfert sera par contre le même. Donc 2 x t1 nanosecondes + 1 x t2 μs
+
+Exercice 3 : Une page de texte imprimée classique contient 50 lignes de 80 caractères chacune. Imaginez qu'une imprimante donnée puisse imprimer 6 pages/minute et que le temps d'écrire un caractère dans le registre de sortie de l'imprimante soit si court qu'il puisse être ignoré. Est-il logique d'exécuter cette impression avec des E/S pilotées par les interruptions si chaque caractère imprimé demande une interruption qui prend 50 μs en tout ?
+	50 x 80 x 6 = 24000 caractères par minutes. 24000 caractères x 50 μs -> 1.2 sec. Pour un temps si court c'est inutile.
+
+Exercice 4 : Expliquez comment un système d'exploitation peut faciliter l'installation d'un nouveau périphérique sans avoir besoin de recompiler le noyau.
+	La gestion des entrées/sorties se fait grâce à 4 couches logicielles. Au niveau de la couche du logiciel d'indépendance du matériel, au niveau du système d'exploitation, il est possible de définir des interfaces standardisée, qui, si elles sont respectées, rendent l'installation d'un nouveau périphérique totalement transparent pour le système d'exploitation.
+
+Exercice 5 : Situez les opérations suivantes dans l'une des quatre couches logicielles d'E/S :
+a. Calcul de la piste, du secteur et de la tête d'une lecture de disque.
+b. Écriture de commandes dans les registres d'un périphérique.
+c. Vérification que l'utilisateur est autorisé à utiliser le périphérique.
+d. Conversion des entiers binaires en ASCII pour l'impression.
+
+	a) Pilote de périphérique
+	b) Gestionnaire d'interruptions
+	c) Logiciel d'indépendance du matériel
+	d) Logiciel d'entrées/sorties niveau utilisateur
+
+Exercice 6 : Un réseau local est exploité de la manière suivante. L'utilisateur émet un appel système pour écrire des paquets de données sur le réseau. Le système d'exploitation les copie ensuite dans une mémoire tampon du noyau, puis sur la carte contrôleur réseau. Lorsque tous les octets se trouvent en sécurité dans le contrôleur ils sont envoyés sur le réseau à une vitesse de 10 Mb/s. Le contrôleur réseau destinataire stocke chaque bit une microseconde après son envoi·. Lorsque le dernier bit se présente, le processeur de destination est interrompu et le noyau copie le nouveau paquet dans une mémoire tampon du noyau pour l'analyser. Une fois qu'il a compris à qui est destiné le paquet, le noyau copie les données dans l’espace utilisateur.
+Si nous supposons que chaque interruption et le traitement qui lui est associé prennent 1 ms, que la taille des paquets (en ignorant les entêtes) est de 1 024 octets et que la copie d'un octet s'effectue en 1 μs, quelle est la vitesse maximum à laquelle un processus pompe les données dans un autre ?
+Supposez que l'expéditeur reste bloqué tant que le travail n'est pas terminé du côté réception et qu'il n'ait pas reçu un acquittement en retour. Pour simplifier le problème, supposez que le délai de réception de la confirmation est suffisamment court pour être ignoré.
+	interruption / traitement 1ms taille paquet 1024o copie octet 1micros réseau 10Mb/s et 1 micro après
+	Appel système + copie sur mémoire tampon + copie dans le controleur + copie du controleur récepteur dans le noyau + copie dans l'espace utilisateur -> 5 interruptions -> 5 ms -> 5000 μs.
+	Pour un paquet donné de 1024o, le paquet représente 8192 bits. Le paquet sera donc copié en 8182 μs. Il y a 4 copies à faire soit 32768 μs.
+	La vitesse du réseau est de 10 Mb/s soit 10485760 bits/s. Le transfert de données sera fait en 0.00078125 secondes soit 781.25 μs + 1 vu que le destinataire stocke chaque bit une microseconde après son envoi.
+	5000 + 32768 + 782.25 -> 38.49 millisecondes.
+
+Exercice 7 : Des requêtes de disque parviennent au pilote de disque pour les cylindres 10, 22, 20, 2, 40, 6 et 38, dans cet ordre. Un positionnement prend 6 ms par cylindre. Quel est le temps de positionnement nécessaire si l'on suit les méthodes suivantes :
+Dans tous les cas, le bras se trouve à l'origine au-dessus du cylindre 20.
+a. Premier arrivé, premier servi.
+b. Plus proche en premier.
+c. L'algorithme de l'ascenseur (déplacement vers le haut en premier).
+
+	a) 12 + 10 + 18 + 38 + 34 + 32 = 144 x 6 ms -> 864 ms -> 0.86 seconde
+	b) 4 + 4 + 18 + 2 + 16 + 4 = 48 x 6 ms -> 288 ms -> 0.28 seconde
+	c) 8 + 4 + 18 + 2 + 16 + 4 = 52 x 6 ms -> 312 ms -> 0.31 seconde
+
+Exercice 8 : Le gestionnaire d'interruptions de l'horloge d'un ordinateur donné nécessite 2 ms (y compris le temps système nécessaire au basculement de processus) par top d'horloge. L'horloge fonctionne à 50 Hz. Quel pourcentage du processeur est dédié au traitement l'horloge ?
+	Pour une fréquence de 50 Hz il y a 50 tops en une seconde
+	2ms -> 0.002 s. 0.002 x 50 -> 0.1 seconde de temps dédié à l'horloge
+	0.1 seconde pour une seconde représente donc 10% du temps de processeur
+
+Exercice 9 : De nombreuses versions d'UNIX utilisent un entier 32 bits non signé pour suivre l'heure sous la forme d'un nombre de secondes écoulées depuis l'origine du temps. Quand ces systèmes vont-ils boucler (année et mois) ? Pensez-vous que cela se produira réellement ?
+	Valeur maximale pour un entier codé sur 32bits -> 4294967294. Soit autant de secondes.
+	4294967294 secondes vaut 136 ans et 70 jours. 1er janvier 1970 + 136 ans 70 jours -> 2106 au mois de mars.
+	Ce bug serait comparable au bug de l'an 2000 qui n'a jamais eu lieu. Au lieu d'être stocké sous 32 bits, les systèmes stockeront cette heure sous 64 bits, ce qui repoussera le problème pour un bon moment.
+
+Exercice 10 : Un ordinateur portable est configuré pour profiter au maximum des fonctionnalités d'économie d'énergie, parmi lesquelles l'extinction de l'écran et du disque dur après des périodes d'inactivité. Un utilisateur exécute parfois un programme UNIX en mode texte et se sert du système X-Window le reste du temps. Il est surpris de remarquer que la durée de vie de la batterie est nettement meilleure avec les programmes en mode texte uniquement. Pourquoi ? 
+	La consommation d'un écran est de 39 à 68%, ce qui est de loin le composant le plus gourmand en énergie. Naturellement selon que les possibilités de ce composant sont plus ou moins exploitées le consommation d'energie va varier (couleurs, animation, vitesse d'affichage...) Avec un affichage bien moins gourmant en mode texte l'économie d'énergie est significative. 

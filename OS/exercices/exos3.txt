@@ -1,0 +1,44 @@
+Exercice 1 : Supposons que vous deviez concevoir une architecture informatique avancée qui effectuerait la commutation entre processus au niveau matériel au lieu d'employer les interruptions. De quelles informations le processeur aurait-il besoin ? Décrivez comment cela pourrait fonctionner.
+	Pour que le processeur opère des commutations uniquement au niveau matériel, il faudrait que se soit les périphériques qui informent le processeur de la nécéssité d'opérer une commutation. Il faudrait donc établir une communication privilégiée entre le processeur et les périphériques par l'intermédiaire de bus.
+
+
+Exercice 2 : Sur tous les ordinateurs actuels, au moins une partie des gestionnaires d'interruption est écrite en langage d'assemblage. Pourquoi ?
+	Le fonctionnement des interruptions est fortement lié à l'architecture de la machine, il est donc nécéssaire d'utiliser le langage assembleur pour gérer ces particularités.
+
+
+Exercice 3 : Lorsqu'une interruption ou un appel système transfèrent le contrôle au système d'exploitation, on utilise généralement une zone de la pile du noyau distincte de la pile du processus interrompu. Pourquoi ?
+	Contrairement au mode utilisateur, le système d'exploitation fonctionne en mode noyau. Comme l'appel système ou l'interruption est seulement transféré, la pile du processus interrompu reste nécéssaire. Comme une deuxième pile doit être utilisée par le système d'exploitation, il est normal que cette pile soit une pile du noyau.
+
+
+Exercice 4 : Si un processus multithread fait un fork, un problème se produit si le fils récupère une copie de tous les threads du parent. Supposons que l'un des threads d'origine ait été dans l'attente d'une entrée clavier. Nous avons maintenant deux threads attendant des entrées clavier, un dans chaque processus. Ce problème peut-il se produire dans les processus monothreads ?
+	Oui car si un processus monothread en attente d'une entrée clavier est fork dans cet état, on a deux processus qui attendent une entrée clavier, ce qui revient au même que deux threads attendant la même chose.
+
+
+Exercice 5 : Un thread peut-il être préempté par une interruption d'horloge ? Si oui, dans quelles circonstances ? Sinon, pourquoi ?
+	Un thread peut être préempté par une interruption d'horloge si il n'a pas fini son éxécution mais qu'il a consommé son quantum de temps.
+
+
+Exercice 6 : Quel est le principal intérêt d'implémenter les threads dans l'espace utilisateur ? Et quel en est l'inconvénient majeur ?
+	En implémentant les threads en mode utilisateur il n'est pas nécéssaire de repasser par l'espace noyau au moment du changement de contexte ce qui est plus rapide. Par contre, les appels système bloquants vont bloquer tous les threads de ce processus.
+
+
+Exercice 7 : La solution de Peterson au problème de l'exclusion mutuelle fonctionne-t-elle lorsque l'ordonnancement des processus est préemptif ? Non préemptif ?
+	L'algorithme de Peterson fonctionne sur la base de l'attente active, ce qui n'est pas un problème dans le cas de l'ordonnacement préémptif, vu qu'une fois que le processus aura épuisé son quantum il devra céder la place à un autre processus. Ceci est plus problématique dans le cas de l'ordonnacement non-préémptif: en cas d'attente active le processus empêche toute commutation de contexte.
+
+
+Exercice 8 : "Les mesures relevées sur un système donné ont montré que la durée moyenne d’exécution d’un processus était de T avant que ne se produise un blocage sur les E/S. Un changement de processus a besoin d'un délai S que l'on peut considérer comme une perte de temps. Pour un algorithme d'ordonnancement de type tourniquet avec un quantum Q, donnez une formule pour exprimer l'efficacité de l'UC pour chacun des cas suivants :
+	a. Q= 8
+	b. Q>T
+	c. S < Q < T
+	d. Q=S
+	e. Q proche de 0
+
+	a. 100 * ((T + S) / 8)
+	b. 100 * ((T + S) / Q)
+	c. UC éfficace à 100%
+	d. UC éfficace à 0%
+	e. 100 * ((T + S) / Q)
+
+
+Exercice 9 : Cinq jobs sont en attente d'exécution. Leurs délais d'exécution sont respectivement de 9, 6, 3, 5 et X minutes. Dans quel ordre faut-il les exécuter pour réduire le temps de réponse moyen ? Votre réponse dépendra de X. 
+	A priorité comparable, il faut les classer du plus rapide au plus long. Il faut donc placer X entre deux jobs, celui qui est immédiatement plus rapide et celui qui est immédiatement plus long.

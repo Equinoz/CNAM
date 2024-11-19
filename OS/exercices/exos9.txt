@@ -1,0 +1,34 @@
+Exercice 1 : Que se passe-t-il si dans un multiprocesseur, deux processeurs tentent d'accéder exactement au même instant au même mot de mémoire ?
+	Avant de pouvoir accéder à un mot mémoire de la mémoire partagée, il faut obtenir le verrou correspondant. Il n'est pas donc pas possible qu'il y ait un conflit.
+
+Exercice 2 : Si un processeur émet une requête mémoire à chaque instruction et que l'ordinateur fonctionne à 200 MIPS, combien faudra-t-il de processeurs pour saturer un bus de 400 MHz ? On suppose qu'une référence mémoire n'a besoin que d'un seul cycle de bus. Recommencez ce même problème avec un système où l'on utilise la mise en cache et où les caches ont un taux de réussite de 90 %. Enfin, quel taux de réussite sera nécessaire pour permettre à 32 processeurs de partager le bus ?
+	200 million d'instructions par seconde donc 2 x 10^8 de requêtes mémoire par seconde.
+	Un bus de 400 MHz est capable de traiter 4 x 10^8 requêtes mémoire par seconde.
+	Le bus sera donc saturé à partir de 2 processeurs.
+	Avec des mises en cache d'un taux de réussite de 90% le nombre de requêtes requises tombent à 10%, soit 10 fois moins. On peut donc utiliser 10 fois plus de processeurs soit 20 processeurs.
+	Si on veut utiliser 32 processeurs, chacun de ces processeurs ne doit utiliser qu'un 32ème du bus soit 3,125%. Le taux de réussite de mise en cache doit donc être de 96.875%.
+
+Exercice 3 : Les sections critiques dans les sections de code sont-elles réellement nécessaires dans un système d'exploitation SMP pour éviter les conditions de concurrence ou bien les mutex sur des structures de données font-ils aussi bien l'affaire ?
+	Vu qu'il n'y a qu'une copie du système d'exploitation dans un système SMP, les mutex peuvent suffire pour gérer les problématique de concurrence.
+
+Exercice 4 : Lorsque l'instruction TSL est utilisée pour la synchronisation d'un multiprocesseur, le bloc en cache contenant le mutex fera la navette entre le processeur contenant le verrou et le processeur qui le demande si tous les deux continuent d'en avoir besoin. Pour réduire le trafic sur le bus, le processeur qui effectue la demande exécute une TSL tous les 50 cycles du bus, mais le processeur qui détient le verrou a toujours besoin du cache entre les instructions TSL. Si un bloc de cache est composé de 16 mots de 32 bits, que chaque mot a besoin d'un cycle de bus pour être transféré et si le bus a un débit de 400 MHz, quelle fraction de la bande passante du bus est absorbée par le va-et-vient du bloc de cache ?
+	Si un bloc de cache contient 16 mots mémoire de 32 bits, cela représente 512 bits. A une fréquence de 400 MHz, 512 bits seront transférés en 512 / 4 x 10^8 secondes soit 1,28micros.
+	Avec 16 mots mémoire, 16 cycles de bus sont requis tout les 50 cycles.
+
+Exercice 5 : On utilise souvent la bande passante bissectrice d 'un réseau d'interconnexion pour mesurer sa capacité. On l'obtient en supprimant le nombre minimal de liaisons afin de scinder le réseau en deux sous-réseaux de taille égale.  Puis on ajoute la capacité des liaisons supprimées.   S’il existe de nombreuse manière de scinder le réseau, celle qui demande le moins de bande passante donne la bande passante de bissection. Pour un réseau d'interconnexion composé d'un cube de 8 x 8 x 8, quelle est la bande passante de bissection si chaque liaison fonctionne à 1 Gbit/s ?
+	8 x 8 x 8 = 512 liaisons
+	2 cubes de 6 x 6 x 6 représente 432 liaisons. Il y a donc une différence de 80 liaisons.
+	La bande passante de bissection est donc de 80 Gbit/s.
+
+Exercice 6 :  Considérons un multi-ordinateur où l'interface réseau est en mode utilisateur. On a besoin de seulement trois copies allant de la RAM source vers la RAM de destination. Supposons qu'un mot de 32 bits mette 20 ns pour aller ou venir de la carte d'interface réseau et que le réseau lui-même fonctionne a 1 Gbit/s. Quel serait le délai d'un paquet de 64 octets envoyé de la source vers la destination s’il était possible d'ignorer Je délai de copie ? Et en incluant le délai de copie ? Considérons maintenant le cas où l'on ait besoin de deux copies supplémentaires, vers le noyau côté envoi et depuis le noyau côté réception. Dans ce cas, de combien serait le délai ?
+	64 octets / 32 bits = 64 * 8 / 32 = 16 mots
+	16 mots x 20 ns = 0.32 micros x 3 copies = 0.96 micros
+	Plus le délai de copie = 0.96 micros + 3 x délai de copie.
+	Avec les copies supplémentaires = 0.96 micros + 5 x le délai de copie.
+
+Exercice 7 : Soit un hyperviseur de type 1 qui peut supporter simultanément jusqu'à n machines Virtuelles. Les PC ayant un maximum de quatre partitions de disque primaires n peut-il être supérieur à 4 ? Si oui, où les données vont-elles être stockées ?
+	Oui, avec l'utilisation de LVM le nombre de partitions logiques peut-être plus important que le nombres de partitions physiques. Les données seront donc sur une partition logique, de fait réparties sur les quatres partitions physiques.
+
+Exercice 8 : Une façon de gérer les systèmes d'exploitation invités qui changent leurs tables des pages en utilisant des instructions ordinaires est de marquer les tables des pages en lecture seulement. Toute tentative de modification provoque alors un déroutement. Avez-vous une autre idée pour gérer les tables des pages fantômes ? Comparez-la avec la première.
+
+Exercice 9 : VMware fait la translation binaire d'un bloc, l'exécute puis commence la translation du suivant. Est-il imaginable de translater le programme complet avant de l'exécuter ? Si oui, comparez les deux techniques. 

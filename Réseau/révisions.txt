@@ -1,0 +1,4 @@
+8 bits = 1 octets
+En héxa deux symboles 1 octet
+Dans une trame IP, le depl est à multiplier par 8 pour connaître où on en est dans la trame à recevoir. M=1 veut dire qu'il y aura d'autres paquets, M=0 que c'est le dernier. Depl=0 veut dire que c'est le premier.
+Si un seul fragment, pas d'options

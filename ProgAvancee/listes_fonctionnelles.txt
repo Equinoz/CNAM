@@ -1,0 +1,10 @@
+equal:
+[], []: true
+[], t::q: false
+t::q, []: false
+t::q, t1::q1: t == t1 && equal(q, q1)
+
+sorted:
+[]: true
+[t]: true
+t1::t2::q: t1 < t2 && sorted(t2::q)

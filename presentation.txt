@@ -1,0 +1,7 @@
+Bonjour à tous
+
+Je m'appelle Julien et j'ai entrepris une reconversion dans le secteur du dev il y a 4 ans (initialement travailleur social). Suite à une formation courte de niveau BAC+2 je suis en poste depuis bientôt 2 ans en tant que développeur web (je bosse essentiellement en typescript/vue pour développer des applications web). Linuxien convaincu, c'est pour consolider cette nouvelle carrière que je me suis engagé dans l'obtention d'une licence d'informatique générale. Ce semestre je vais également suivre les unités UTC503 et UTC504 et UTC505.
+
+Bon courage à tous
+
+Julien

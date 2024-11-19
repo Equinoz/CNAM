@@ -1,0 +1,34 @@
+Exercice 1 : Des étudiants qui travaillent sur des PC dans un laboratoire d'informatique envoient leurs fichiers à imprimer à un serveur qui les spoule sur son disque dur. Sous quelles conditions un interblocage peut-il se produire si l'espace de spoule de l'imprimante est limité ? Comment éviter l'interblocage ?
+	Un interblocage peut se produire si plusieurs étudiants envoyent en même temps des fichiers voluminaux. Dans ce cas l'espace de stockage peut-être insuffisant et l'imprimante peut être en attente de la totalité d'un fichier qu'elle n'obtiendra jamais. Pour éviter ce problème, il est possible d'utiliser un serveur d'impression qui fera office de file d'attente et acceptera les fichiers dont la taille menace de créer un interblocage seulement si il y a la place requise.
+
+
+Exercice 2 : Les quatre conditions (exclusion mutuelle, détention et attente, pas de réquisition et attente circulaire) sont nécessaires pour qu'il y ait interblocage de ressources. Quand ces conditions sont-elles suffisantes ?
+	Ces conditions sont suffisantes dès que deux processus tentent d'accéder à deux mêmes ressources qui ne peuvent être utilisées simultanément et que ces processus se retrouvent en attente dès lors qu'il ne sont pas satisfaits.
+
+
+Exercice 3 : Un système peut-il se trouver dans un état qui ne soit ni un interblocage, ni un état sûr ? Le cas échéant, donnez un exemple. Dans le cas contraire, démontrez que tous les états sont soit bloqués, soit sûrs.
+	Un état non-sûr ne mène pas systématiquement à un interblocage. Si deux processus requièrent la même ressource mais que le premier processus à le temps de libérer la ressource, quand bien même ces processus sont dans le même état, il ne se produira pas d'interblocage.
+
+
+Exercice 4 : Considérez un système qui utilise l'algorithme du banquier pour éviter les interblocages. À un certain moment, un processus P demande une ressource R mais on la lui refuse bien que R soit disponible. Cela signifie-t-il que si la ressource R lui était allouée, le système serait en interblocage ?
+	Pas nécéssairement. L'algorithme peut considérer que ce processus détient déjà suffisamment de ressources et que cet allocation peut attendre un peu.
+
+
+Exercice 5 : Un système possède 2 processus et 3 ressources identiques. Chaque processus a besoin de deux ressources maximums. Un interblocage est-il possible ? Expliquez votre réponse.
+	Ces deux processus peuvent vouloir accéder aux deux mêmes ressources. Un interblocage est donc posible, sauf si les besoins des processus sont connus auquel cas un algorithme du banquier peut permettre d'attribuer de façon éfficiente les différentes ressources.
+
+Exercice 6 :  Un système contient 4 processus et 5 ressources disponibles. Voici comment elles sont attribuées et quels sont les besoins maximums :
+Quelle est la plus petite valeur de x pour laquelle l'état est sûr ?
+	4 des ressources concernées sont déjà attribuées. Au maximum c'est 9 de ses ressources qui peuvent être demandées. Il peut donc y en avoir 5 de plus de nécéssaire, ce qui est d'ailleurs le nombre de ses ressources qui est peuvent être requises.
+	La valeur minimale de x dans lequel l'état est sûr est donc de 5
+
+
+Exercice 7 : Une façon de supprimer l'attente circulaire est de disposer d'une règle indiquant qu'un processus n'a droit à un instant donné qu'à une seule ressource. Donnez un exemple qui montre que cette restriction est très souvent inacceptable.
+	De nombreux processus nécéssitent d'avoir recours à plusieurs ressources. Par exemple un programme de traitement d'image a souvent besoin d'accéder à plusieurs images simultanément, si cette possibilité n'est pas enviseagable le programme est pour ainsi dire inutile.
+
+
+Exercice 8 : Une manière d'éviter les interblocages consiste à supprimer la condition de détention et d'attente. Dans le cours, il était proposé qu'avant de demander une nouvelle ressource, un processus doive d'abord libérer toutes les ressources qu'il détenait (en supposant que cela soit possible). Toutefois, ce comportement est risqué car le processus peut détenir la nouvelle ressource, mais en perdre d'autres au profit de processus concurrents. Proposez une amélioration de ce schéma.
+	Il peut être possible de hiérarchiser les processus pour qu'un processus puisse avoir priorité sur d'autres. L'ancienneté du processus peut entrer en ligne de compte dans le calcul de hiérarchisation pour s'assurer que ce processus ne se retrouve pas affamé.
+
+
+Exercice 9 : Écrivez un programme qui détecte s'il y a un interblocage dans le système en utilisant un graphe d'allocation des ressources. Ce programme lit dans un fichier le nombre de processus et le nombre de ressources. Pour chaque processus, il lit ensuite : le nombre de ressources que le processus possède actuellement, les identificateurs de ces ressources, le nombre de ressources dont il a besoin et leurs identificateurs. En sortie, le programme doit indiquer s'il y a interblocage et, dans ce cas, il doit imprimer la liste des processus qui y participent. 

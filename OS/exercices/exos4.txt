@@ -1,0 +1,64 @@
+Exercice 1 : Un système de va-et-vient élimine la fragmentation externe grâce au compactage. Supposons une distribution aléatoire de nombreux vides et de nombreuses zones de données et un temps de lecture ou d'écriture de 10 ns pour un mot mémoire de 32 bits. Combien de temps processeur sera nécessaire pour compacter 128 Mo ? Pour simplifier, nous supposons que le mot d'adresse 0 fait partie d'une zone vide et que le mot le plus haut dans la mémoire contient une donnée valide.
+	128 Mo -> 1024000000 bits
+	1024000000 / 32 = 32000000 mots mémoire
+	32000000 * 10 = 320000000 ns
+	0.32 sec
+
+
+Exercice 2 : Dans ce problème, vous devez comparer l'espace de stockage nécessaire pour mémoriser la mémoire libre, d'une part avec une table de bits, d'autre part avec une liste chaînée. La mémoire de 128 Mo est allouée par unités de n octets. Pour la liste chaînée, nous supposons que la mémoire est constituée de segments de 64 Ko en alternance avec des zones vides de taille identique. Nous admettons également que chaque nœud de cette liste nécessite une adresse mémoire de 32 bits, une longueur de 16 bits et un champ de 16 bits pour le prochain nœud. Quelle est la taille de stockage nécessaire pour chaque méthode ? Laquelle est la meilleure ?
+	Liste chaînée: 64 Ko * 2 + 64 bits
+	128 Ko + 8 o = 128008 o
+	128 Mo -> 128000000 o
+	128008 * 998 + 64000 = 127815984 o
+	La liste chaînée permet de stocker 999 * 64 Ko soit 63.936 Mo
+
+
+Exercice 3 : La quantité d'espace disque qui doit être disponible pour stocker des pages est liée au nombre maximum de processus, N, au nombre d'octets de l'espace d'adressage virtuel, V, et au nombre d'octets de la RAM, R. Imaginez le cas le plus défavorable pour l'espace disque requis et donnez-en une expression. Cette valeur est-elle réaliste ?
+	Plus N et V sont importants et plus R est faible, pire sont les besoins en espace disque requis. Dans le cas où V est important et R faible, le système d'exploitation ne permettra pas l'exécution d'un grand nombre de processus, donc N sera également faible.
+
+
+Exercice 4 : Un ordinateur ayant des adresses 32 bits utilise une table des pages à deux niveaux. Les adresses virtuelles ont trois parties : un champ de 9 bits qui représente le premier niveau, un champ de 11 bits qui représente le second niveau, et un déplacement. De quelle taille sont les pages ? Combien en existe-t-il dans l'espace d'adressage ?
+	Nombre de bits requis pour représenter l'adresse d'une page: 9 + 11 = 20 o
+	Des adresses de 32 bits gérées par une table à deux niveaux permet d'adresser jusqu'à 2 puissance 32 bits donc 4294967296 bits -> 536870912 o
+
+
+Exercice 5 : Combien de temps faudra-t-il pour charger un programme de 64 Ko depuis un disque dont le temps moyen de recherche est de 10 ms et le temps de rotation de 10 ms, et dont les pistes font 32 Ko :
+a. Pour des pages de 2 Ko ?
+b. Pour des pages de 4 Ko ?
+On considère que les pages sont aléatoirement réparties sur le disque et que la probabilité que deux pages soient sur le même cylindre est négligeable.
+	a. 64 / 2 = 32 pages requises.
+		32 * 10 ms = 0.32s
+		Nombre de pages dans une piste: 32 / 2 = 16
+		Temps total de rotation: 2 * 10ms = 20ms
+		Temps total: 0.34ms
+	b. 64 / 4 = 16 pages requises.
+		16 * 10 ms = 0.16s
+		Nombre de pages dans une piste: 32 / 4 = 8
+		Temps total de rotation: 8 * 10ms = 80ms
+		Temps total: 0.24ms
+
+
+Exercice 6 : Nous avons constaté que le nombre d'instructions exécutées entre des défauts de pages est directement proportionnel au nombre de cases mémoire allouées au programme. Si la mémoire disponible est doublée, l'intervalle moyen entre des défauts de pages successifs est aussi doublé. Supposons qu'une instruction normale prenne 1 μs, mais que si un défaut de page se produit, elle prenne 2 001 μs. Si un programme prend 60 s pour s'exécuter en produisant 15 000 défauts de pages, quelle serait sa durée d'exécution s'il y avait deux fois plus de mémoire disponible ?
+	Intervalle moyen entre deux défauts de page: 60s / 15000 = 250 μs
+	Le temps d'execution d'une instruction est plus long que l'intervalle entre deux défauts de pages.A chaque défaut de page il y a donc une seule instruction de 2001 μs d'éxécutée.
+	Temps d'éxécution lié aux instructions pendant les défauts de page: 15000 * 2001 -> 30015000 μs
+	Temps d'éxécution lié aux instructions normales: 60000000 - 30015000 = 29985000 μs donc 29985000 instructions.
+	29985000 instructions normales + 15000 instructions pendant les défauts de pages = 30000000
+
+	Si on double la mémoire on aura donc deux fois moins de défauts de pages avec des intervalles deux fois plus longs: 500 μs. Le temps d'execution d'une instruction est toujours plus long que l'intervalle entre deux défauts de page.
+	Temps d'éxécution lié aux instructions pendant les défauts de page: 7500 * 2001 -> 15007500 μs
+	Nombres d'instructions restantes: 30000000 - 7500 = 29992500 instructions donc 29992500 μs 
+	Donc le temps total d'éxécution avec deux fois plus de mémoire sera de 15007500 μs + 29992500 μs =  45 secondes
+
+
+Exercice 7 : Une page peut-elle se trouver dans deux ensembles de travail en même temps ? Expliquez.
+	Non, chaque page mémoire est associée à un seul processus à la fois et un ensemble de travail est lié à un processus en particulier.
+
+
+Exercice 8 : Une instruction en langage machine destinée à charger un mot de 32 bits dans un registre contient l'adresse 32 bits du mot à charger. Quel est le nombre maximal de défauts de pages que cette instruction peut générer ?
+	Cette instruction ne peut pas générer de défaut de page étant donné qu'elle contient déjà l'adresse du mot à charger.
+
+
+Exercice 9 : Lorsque la segmentation et la pagination sont toutes deux employées, comme dans MULTICS, il faut d'abord examiner le descripteur de segments, puis le descripteur de pages. La mémoire associative fonctionne-t-elle de cette manière avec une recherche à deux niveaux ? 
+	Non, la mémoire associative stocke des données récemment utilisées et les différents niveaux permettent juste de faire la distinction entre plusieurs critères de priorité. Lorsque la segmentation et la pagination sont utilisées conjointement, les pages sont organisées par segments, il est donc nécéssaire de faire d'abord une recherche par segment avant de faire une recherche par pagination qui sont deux types de recherches bien différentes.
+

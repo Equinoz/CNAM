@@ -1,0 +1,5 @@
+host-id
+On allume un pont en spanning-tree
+Table de routage avec des trucs comment on sait quel réseau va être déstiné telle requête
+En-têtes de la trame d'un endroit à l'autre
+Les réseaux de classe B avec plusieurs sous-réseaux comment on défini les adresses adressables

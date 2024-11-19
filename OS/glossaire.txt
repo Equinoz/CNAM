@@ -1,0 +1,588 @@
+- Abstraction:
+	L'abstraction est le fait de généraliser du code pour le détacher au maximum du contexte. Une couche d'abstraction matérielle est une couche logicielle qui n'oblige pas à redévelopper à chaque fois du code pour les composants spécifiques de la machine.
+	
+- Accès direct:
+	On parle d'accès direct lorsque le processus accède directement à l'endroit où se trouve l'élément à lire ou écrire.
+
+- Accès aléatoire:
+
+- Accès séquentiel:
+	On parle d'accès séquentiel lorsqu'il est possible d'accéder à un groupe d'éléments uniquement dans un ordre prédéfini.
+	Autre nom pour l'accès direct.
+	
+- Activation de l'ordonnanceur:
+	Le noyau fourni des processeurs virtuels aux processus pour leur permettre de gérer leurs threads. A chaque événement, l'ordonnanceur doit reconsidérer le partage de ces ressources: c'est l'activation de l'ordonnanceur.
+
+- Algorithme d'allocation de processeurs:
+	Algorithme permettant d'associer des processus à des noeuds
+
+- Algorithme d'ordonnancement:
+	Algorithme utilisé par l'ordonnanceur pour désigner le prochain processus à éxécuter.
+
+- Algorithme du banquier:
+	Algorithme d'ordonnancement permettant d'éviter les interblocages. Il s'inspire de la façon dont un banquier d'une petite ville accorde des crédits à un groupe de clients.
+
+- Appel système:
+	Lorsque le programme demande au système d'exploitation de réaliser une tâche, il envoie un appel système. Ainsi ce n'est jamais le programme qui manipule directement le matériel.
+
+- Attente active:
+	Attente couteuse parce que réquisitionnant toute la ressource de traitement.
+
+- Attributs:
+	Informations complémentaires associées à chaque fichier. (propriétaire, taille, date de création...)
+
+- Barrières:
+	Méthode permettant de gérer plutôt des groupes de processus. Oblige tout les processus concernés à attendre qu'ils soient tous prêts avant de passer à l'étape suivante.
+
+- BIOS:
+	Le BIOS, Basic Input Output System, est un logiciel de bas niveau qui permet de faire le lien avec les périphériques. Il est lancé dès le démarrage de l'ordinateur.
+
+- Bloc de contrôle:
+	Entrée dans une table de processus. Un bloc contient des données concernant un processus en particulier, données réparties en trois types: la gestion du processus lui-même, la gestion de la mémoire et la gestion des fichiers. 
+
+- Bloc d'amorçage:
+	Zone du disque dur qui contient une routine qui charge le système d'exploitation contenu sur la partition.
+
+- Cadre de page:
+	Espace physique en mémoire qui contient les pages.
+
+- CCORBA:
+	Technologie permettant de fournir un moyen standard à différents programmes de s'envoyer et recevoir des messages
+
+- CC-NUMA:
+	Architecture NUMA où des mises en mémoire cache cohérente sont présentes.
+
+- Changement de contexte:
+	Sauvegarde de l'état du processus ou du thread courant pour être remplacé par les données d'un autre processus/thread.
+
+- Chemin:
+	Identifiant d'un fichier ou d'un répertoire. Il peut être absolu, dans ce cas il est composé de la liste des répertoires à traverser depuis le répertoire racine. Il peut aussi être relatif, dans ce cas il fait référence au répertoire de travail courant.
+
+- Chemin d'accès absolu:
+	Chemin complet de l'emplacement d'un fichier à partir de la racine.
+
+- Chemin d'accès relatif:
+	Chemin de l'emplacement d'un fichier à partir du répertoire courant.
+
+- Clients:
+	Dans le modèle client-serveur, utilise les services mis à disposition par les serveurs.
+
+- Cluster:
+	Consiste à utiliser plusieurs ordinateurs inter-connectés
+
+- CMP:
+	Chip MultiProcessor. Puce contenant plusieurs coeurs.
+
+- Coeurs:
+	Unité centrale présente sur une puce.
+
+- Communication interprocessus:
+	Désigne le fait que les processus peuvent collaborer entre-eux afin de se synchroniser pour réaliser des tâches complexes.
+
+- Commutateur crossbar:
+	Architecture composée de commutateurs pour connecter N processeurs à K mémoires
+
+- Commutation de circuits:
+	Contrairement à la commutation de paquets, la commutation de circuits va d'abord établir un chemin à travers le réseau avant d'envoyer toutes les datas en une seule fois à travers le réseau
+
+- Commutation de paquet:
+	La commutation de paquets permet de transférer des datas à travers le réseau sous forme de paquets 
+
+- Compteur ordinal:
+	Le compteur ordinal est un registre du CPU qui contient l'adresse de l'instruction en cours d'exécution ou prochainement exécutée (selon les architectures). Une fois l'instruction chargée, ce registre est incrémenté. 
+
+- Conditions de concurrence:
+	Situation dans laquelle plusieurs processus veulent accéder à la même ressource au même moment et où au moins un des processus est susceptible de modifier l'état de la ressource concernée. 
+
+- Contrôleur de périphérique:
+	Composant éléctronique du périphérique.
+
+- COWS (Clusters of Workstation):
+	Autre nom pour un cluster
+
+- CPU:
+	Le CPU est le processeur ou microprocesseur, l'unité matérielle qui exécute les calculs. Il possède une mémoire dédiée composée de registres.
+
+- Défaut de page:
+	Lorsque qu'un processus tente d'accéder à une page qui n'est actuellement pas référencée dans la RAM, cette référence mémoire non valide constitue un défaut de page: dans ce cas le système cherche l'emplacement des datas requises, cherche à obtenir un cadre de page vide dans la RAM (quitte à déférencer d'autres pages) mets à jour le tableau de pages et permet au processus de retenter cet accès mémoire.
+
+- Démons:
+	Processus d'arrière-plan, non associé à une utilisation particulière du système, mais assurant le bon fonctionnement de certains services en continu.
+
+- Descripteur de ficher:
+	Avant d'être lu ou écrit un fichier doit être ouvert. Les droits de l'utilisateur sont vérifiés au moment de cette ouverture. Si cette ouverture est effective, le système renvoie une valeur entière qui est le descripteur du fichier. Ce descripteur sera utilisé pour toutes les opérations sur le fichier concerné.
+
+- DMA:
+
+- Domaine 0:
+	Approche qui consiste à dédier une des machines virtuelles pour exécuter un système d'exploitation standard qui recevra toutes les entrées/sorties des autres machines
+	Direct Memory Access, désigne un procédé informatique permettant la communication directe entre le périphérique et la mémoire.
+
+- DSM:
+	Technique permettant de donner l'impression que plusieurs machines possèdent une mémoire partagée
+
+- Echange de messages:
+	Méthode de communication inter-processus en envoyant et recevant des messages entre processus. Cet échange utilise les deux appels systèmes send et receive.
+
+- Ecroulement:
+	Lorsque des pages de processus utilisés fréquemment sont choisies pour être remplacées le système s'écroule. Dans ce cas les pages incriminées sont relues dans le but d'être réutilisées et prennent donc la place d'une autre page. Cet état de fait occupe le système de façon abusive en entrées/sorties pour fournir les pages aux processus.
+
+- EEPROM:
+	EEPROM est de la mémoire morte accessible en lecture seule. Cependant elle est effaçable grâce à des impulsions électriques. Les données contenues dans cette mémoire peuvent y être stockées pendant une dizaine d'année hors tension. On y stocke par exemple les mots de passe des PC portables.
+
+- Enregistrement d'amorçage maître:
+	Zone présente sur le premier secteur du disque dur. Contient la table des partitions et une petite routine servant à charger le système d'exploitation (boot loader).
+
+- Espace d'adressage:
+	Ensemble limité d'adresses mémoire à disposition d'un processus pour écriture et lecture. Il contient le programme exécutable, les données du programme et sa pile d'exécution, ainsi que des registres (entres-autres compteur ordinal et pointeur de pile).
+
+- Espace d'adressage (mémoire):
+	Abstraction de la mémoire au sein d'un processus. Ce concept permet à chaque processus de disposer de son propre espace d'adressage, ainsi les processus peuvent travailler sans risque de conflits de mémoire.
+
+- Espace d'E/S:
+	L'espace d'entrées/sorties est l'ensemble des ports d'entrées/sorties (numéros de segment assignés à chaque périphérique). Cet espace est protégé et seulement accesible par le noyau.
+
+- Espace partagé:
+	Ordonnancement simultané de plusieurs threads sur plusieurs processeurs.
+
+- Etat non sûr:
+	Un état est dit non-sûr si il est impossible de trouver un ordonnancement où tous les processus peuvent s'éxécuter jusqu'au bout en demandant le maximum de ressources sans créer d'inter-blocage.
+
+- Etat sûr:
+	Un état est dit sûr si il existe un ordonnancement qui permet aux processus de s'éxécuter jusqu'au bout même si chacun demande le maximum de ressources.
+
+- Exclusion mutuelle:
+	Les exclusions mutuelles permettent de régler les conditions de concurrence en s'assurant qu'un seul processus éxécute un bloc d'instructions à la fois.
+
+- Exonoyau:
+	Partitionnement de la machine afin de mettre à disposition de chaque utilisateur un sous-ensemble des ressources. Le rôle du micro-noyau est d'allouer ces ressources aux machines virtuelles et de vérifier les tentatives d'accès à ces machines. Chaque machine virtuelle peut exécuter son propre système d'exploitation dans la limite des ressources qui lui sont allouées.
+
+- Extension:
+	Un des deux éléments qui caractérise un fichier. L'extension est séparée du nom par un point. Certains programmes n'acceptent pas d'utiliser un fichier si son extension n'est pas celle attendue.
+
+- Faux partage:
+	Problématique liée à l'usage du DSN, lorsque une page contient deux variables partagées sans rapport entre elles (présentes par hasard sur la même page). Il faut à chaque fois recopier l'ensemble des données sans en avoir besoin ce qui pose un problème de performances 
+
+- Fichier objets:
+	Un fichier objet (d'extension .o) est un fichier de code source C compilé en langage binaire pour la machine cible.
+
+- Fichier spécial:
+	Permet de faire apparaître les périphériques d'entrées/sorties comme des fichiers classiques, périphériques qui peuvent être lus et écrits par les mêmes appels système que les fichiers ordinaires. Par convention ces fichiers sont placés dans le répertoire /dev
+
+- Fichiers ordinaires:
+	Fichiers contenant les datas des utilisateurs. Ils peuvent être en mode binaire ou en mode texte.
+
+- Fichiers spéciaux bloc:
+	Fichiers qui servent à modéliser les disques, la plupart du temps disponibles en accès direct et autorisant les lectures/écritures en mémoire tampon.
+
+- Fichiers spéciaux caractère:
+	Fichiers qui servent à modéliser les périphériques d'entres/sorties, la plupart du temps ne sont pas disponibles en accès direct. 
+
+- Fragmentation:
+	Un processus, même simple, doit contenir le code du programme, les données, la pile, les appels et les constantes. Comme certains de ces éléments peuvent consommer plus ou moins de mémoire durant l'exécution, il est inévitable que la mémoire se fragmente, l'occupation en mémoire ne pouvant être contigüe sans conflits.
+
+- GDT:
+	Table unique partagée par tous les processus, contenant tous les espaces d'adressage système (y compris ceux du système d'exploitation).
+
+- GUI:
+	 Un GUI (Graphical User Interface) est un programme indépendant du système d'exploitation fournissant une interface utilisateur graphique pour interagir avec le système d'exploitation. Un gestionnaire de bureau ou un environnement de bureau sont des GUI.
+
+- Hôte:
+	Terme général désignant un système relié à un réseau, qu'il fournisse des services à d'autres systèmes ou que se soit un simple client.
+
+- Hyperviseur:
+	Gestionnaire de machines virtuelles.
+	
+- Hyperviseur de type 1:
+	La machine virtuelle est le système d'exploitation de la machine hôte.
+
+- Hyperviseur de type 2:
+	Logiciel permettant la virtualisation sur un système d'exploitation plus grand public (Linux, Windows, Mac)
+
+- IDE:
+	Bus de connexion ayant précédé les bus de type SATA.
+
+- Identifiant utilisateur UID:
+	User IDentification. Tout utilisateur étant autorisé à avoir accès à l'ensemble ou à une partie du système se voit attribuer un identifiant. Chaque processus hérite du processus de l'utilisateur qui l'a créé.
+
+- Identificateur de groupe GID:
+	Group IDentification. Les utilisateurs peuvent être structurés en groupe, chacun de ces groupes est identifié par cet identifiant.
+
+- IHM graphique:
+	IHM désigne une Interface Humain Machine. Les IHM graphiques (sous forme par exemple de tableau de bord) s'opposent aux IHM textuelles qui se présentent sous forme de terminal.
+
+- Impression off-line:
+	L'impression off line désigne le fait d'avoir à récupérer le résultat d'un programme sur une machine et de devoir utiliser une autre machine pour en imprimer les résultats.
+
+- Interblocage actif:
+	Type d'interblocage dans lequel plusieurs processus tentent d'obtenir le verrou d'une ressource sans jamais y parvenir. Dans les faits les processus ne sont pas bloqués, mais il ne peuvent pour autant pas mener leur exécution au bout.
+
+- Interblocage de communication:
+	Type d'interblocage de réseau. Au lieu d'une ressource, c'est une réponse qu'un processus attend de la part d'un autre processus. Interlocage résolvable grâce au concept de timeout.
+
+- Interblocage de ressources:
+	Se produit lorsque tout les processus sont bloqués et attendent pour être débloqués la libération d'une ressource elle-même détenue par une autre processus bloqué en attente de la libération d'une de ses ressource.
+
+- Interpréteur de commande:
+	Shell. Interface du système d'exploitation. Couche la plus externe du système, permet à l'utilisateur l'exécution de commandes en mode texte. A chaque connexion d'un utilisateur un shell est lancé.
+
+- Interruption imprécise:
+	Interruption dont le moment d'arrivée n'est pas précisément connu par le système d'exploitation. Non anticipable, ces interruptions sont souvent utilisées pour les tâches non critiques ou non urgentes.
+
+- Interruption précise:
+	Interruption dont le moment d'arrivée est précisément connu par le système d'exploitation. Anticipable.
+
+- IPC:
+	Inter Process Communication. Ensemble de mécanismes permettant à des processus concurrents de communiquer.
+
+- LDT:
+	Table décrivant les espaces d'adressage de chaque processus.
+
+- Lien matériel:
+	Crée un lien depuis un fichier existant et un chemin d'accès afin de permettre à un fichier d'apparaître dans plus d'un répertoire.
+
+- Lien symbolique:
+	Au lieu d'avoir deux noms qui pointent sur le même fichier, on peut faire un lien symbolique qui consiste à pointer sur un mini fichier qui pointe sur un autre fichier.
+
+- Ligne de cache:
+	La mémoire cache est divisée en lignes de cache d'une capacité le plus souvent de 64 octets.
+
+- Loi de Moore:
+	Loi indiquant que plus les transistors sont petits, plus on peut en mettre sur une puce.
+
+- Machines virtuelles:
+	Instances de systèmes virtualisés pour un hyperviseur donné
+
+- Mainframe:
+	Un mainframe est un ordinateur central, souvent de grande puissance, auquel les utilisateurs se connectent par le biais de terminaux. Ces terminaux ne permettent d'accéder qu'à cet ordinateur central.
+
+- Maître/esclave:
+	Un processeur (le maître) exécute le système d'exploitation et confie les processus utilisateurs aux processeurs esclaves.
+
+- Marshalling:
+	Type de message consistant à empaqueter des paramètres dans un appel de procédure
+
+- Mémoire cache:
+	La mémoire cache est de la RAM à laquelle le processeur peut accéder plus rapidement qu'à la RAM classique. Elle est employée pour stocker des informations fréquemment réutilisées par les processus en cours d'exécution.
+
+- Mémoire Flash:
+	La mémoire Flash est un type de stockage de mémoire morte qui n'utilise pas de composant mécanique. Les disques SSD par exemple fonctionnent grâce à la mémoire Flash.
+
+- Mémoire virtuelle:
+	Utilisation d'adresses virtuelles traduites lors de l'exécution en adresses physiques.
+
+- Métadonnées:
+	Autre nom pour les attributs d'un fichier.
+
+- Middleware:
+	Couche logicielle intermédiaire permettant à des ordinateurs distants de fonctionner ensemble de manière cohérente
+
+- MMU:
+	Unité de gestion de la mémoire qui traduit les adresses virtuelles en adresses physiques.
+
+- Mode bloc:
+	Fichiers spéciaux représentant des périphériques sous forme de blocs accessibles de manière aléatoire comme les disques. Permet d'accéder à un bloc indépendamment de la structure de système de fichiers.
+
+- Mode caractère:
+	Fichiers spéciaux représentant les périphériques comme les imprimantes ou les modems qui traitent des flots de caractères.
+
+- Mode noyau:
+	Les programmes exécutés en mode noyau ne subissent pas de restrictions notamment au niveau de la mémoire. Un tel programme n'est pas isolé du système d'exploitation et peut accidentellement compromettre le fonctionnement des autres programmes, voire du système d'exploitation lui-même.
+
+- Mode superviseur:
+	Synonyme de "mode noyau".
+
+- Mode utilisateur:
+	Lorsque on lance un programme en mode utilisateur, le système d'exploitation fourni un processus à ce programme, processus qui l'isolera des autres programmes dont le système d'exploitation. Cette restriction limite les risques d'endommagement du système. 
+
+- Modèle client-serveur:
+	Modèle d'architecture système (variante du micro-noyau) faisant la distinction entre deux types de processus: les serveurs et les clients. La communication entre le client et le serveur se fait le plus souvent par échange de messages (requêtes).
+
+- Modèle physique:
+	Modèle de gestion de la mémoire dans lequel l'addressage dans un processus se fait via les adresses physique de la machine. Ce modèle possède des limitations de taille, souffre de dépendances matérielle et est soumis à de la fragmentation.
+
+- Moniteur:
+	Un moniteur est un objet avec des propriétés et des méthodes, méthodes qui empêchent l'éxécution d'une autre méthode de l'objet pendant l'éxécution par un processus. Ainsi l'exclusion est gérée au niveau du langage contrairement aux sémaphores et aux mutexs.
+
+- Montage:
+	Fait de rattacher un système de fichiers nomade à l'arborescence principale du système.
+
+- Mot d'état:
+	PSW (Program Status Word) en anglais. Registre du CPU indiquant l'état du processus en cours d'exécution. Interprété bit à bit il renseigne sur son état d'exécution ou son mode de fonctionnement.
+
+- Multiplexage:
+	Le multiplexage consiste à envoyer plusieurs informations par le biais d'un signal unique. C'est une façon de partager les canaux de communication afin de rentabiliser l'utilisation des périphériques.
+
+- Multiprocesseur à mémoire partagé:
+	Système informatique ou deux ou plusieurs processeurs partagent un accès complet à une RAM commune
+
+- Multiprocesseur à répertoire:
+	Base de données permettant d'indiquer où se trouve chaque ligne de mémoire cache, ainsi que son état.
+
+- Multiprogrammation:
+	La multiprogrammation permet de gérer plusieurs processus en mémoire en même temps. Ces processus sont exécutés soit par batch soit par temps partagé.
+
+- Multithreading:
+	Désigne une situation où plusieurs threads sont présents dans le même processus.
+
+- Mutex:
+	Les mutex permettent de gérer l'exclusion mutuelle en bloquant/débloquant l'accès à une ressource.
+
+- NC-NUMA:
+	Architecture NUMA où le temps d'accès à la mémoire distante peut être directement observé parce qu'il n'y a pas d'accès à la mémoire cache.
+
+- Nœud d'index:
+	Structure de données associée à chaque fichier contenant les attributs du fichier et un tableau des blocs contenant le fichier.
+
+- Nombre magique:
+	Série d'octets qui servent d'identifiant pour un fichier exécutable sous Linux.
+
+- NUMA:
+	No uniform memory access. Architecture de bus pour addresser la mémoire.
+
+- Ordonnancement non préemptif:
+	Ordonnancement qui attend que le processus se termine ou se retrouve en état d'attente pour déclencher une commutation de contexte.
+
+- Ordonnancement par bandes:
+	Algorithme composé de 3 parties:
+	- Des groupes de threads liés sont ordonnancés comme une unité (une bande)
+	- Tous les membres d'une bande sont éxecutés simultanément sur plusieurs processeurs en temps partagé
+	- Tous les membres de la bande commencent et terminent ensemble leur intervalle de temps
+	
+- Ordonnancement préemptif:
+	Ordonnacement qui peut mettre des processus en état prêt lorsqu'il sont en cours. Cela arrive par exemple lorsque le processus a déjà bénéficié de son quantum ou si un processus avec une priorité plus haute arrive dans la file d'attente.
+
+_ Ordonnanceur:
+	Partie du système d'exploitation qui détermine quel processus s'éxécute au moment d'une commutation de contexte.
+
+- Page fault frequency:
+	Algorythme qui compte le nombre de défauts de pages de chaque processus et alloue les cadres de pages en proportion de défauts de pages. Une moyenne glissante est calculée sur la dernière seconde pour déterminer cette allocation.
+
+- Pages:
+	Division de la mémoire utilisée par les programmes en espaces de taille égale.
+
+- Pagination:
+	La pagination est un concept qui permet d'étendre la mémoire totale du système sans ajouter de mémoire physique. C'est une surcouche de gestion de la mémoire (mémoire virtuelle) où cette mémoire est divisée en pages, pages mémoire gérées grâce à des tables de pages.
+
+- Parallélisme:
+	Fonctionnement d'un système multi-processeur disposant d'au moins deux processeurs partageant la même mémoire. Différent du pseudo-parallélisme où un processeur gère plusieurs processus en multi-programmation.
+
+- Partage:
+	Le partage désigne le fait de partager les ressources de la mémoire, du processeur ainsi que l'accès aux périphériques afin de pouvoir exécuter plusieurs programmes en simultané.
+
+- PCI express:
+	Un PCI express est un standard de bus permettant de connecter plusieurs composant de l'ordinateur entre eux.
+
+- Périphériques d'E/S de caractères:
+	Périphérique se distinguant par le fait fait qu'il traite des caractères. Exemple: souris, clavier, carte réseau...
+
+- Périphériques d'E/S par blocs:
+	Périphérique se distinguant par le fait qu'il traite des blocs de données. Exemple: carte graphique, écran, disque dur...
+
+- Phénomène du damier:
+	Au bout d'un certain temps d'exécution la mémoire segmentée d'un processus fini par créer de la fragmentation interne. Ce problème de fragmentation peut être résolu grâce à une simple opération de compactage.
+
+- Pilote de périphérique:
+	Logiciel permettant de piloter les contrôleurs de périphériques. Chaque contrôleur est propre à son périphérique, donc chaque pilote est spécifique à son contrôleur, et par là même au périphérique
+
+- Pipeline:
+	Un pipeline permet de découper une instruction en plusieurs étapes et ainsi en paralléliser le traitement. Un pipeline n'augmente pas la rapidité du temps de traitement d'une instruction donnée, mais permet d'augmenter le débit du processeur.
+
+- Pointeur de pile:
+	Registre du CPU pointant sur le haut d'une pile. Lorsqu'un élément est ajouté sur la pile, le pointeur est incrémenté de l'équivalent de la taille de la donnée pour pointer sur la bonne adresse mémoire. A l'inverse, lorsqu'un élément est sorti, le pointeur est décrémenté en conséquence.
+
+- Points de reprise:
+	Sauvegarde régulière de l'état de la mémoire d'un processus afin d'être restauré ultérieurement en cas d'interblocage: le processus peut être restauré à un état antérieur à l'acquisition de la ressource.
+
+- Porte d'appel:
+	Pour qu'un processus puisse accéder à une page de niveau de sécurité inférieur à son propre niveau sans provoquer de déroutement, il doit effectuer un appel avec un sélecteur plutôt qu'une adresse: ce sélecteur désigne une porte d'appel qui donne l'adresse de la procédure à appeller. Ce fonctionnement interdit l'accès direct à une adresse d'un segment de niveau inférieur.
+
+- Préprocesseur C:
+	Première étape de la compilation d'un programme C. Le préprocesseur remplace dans le code source les directives include par le code associé, développe les macros et gère la compilation conditionnelle.
+
+- Privation de ressources:
+	Politique de répartition des ressources. Priorise les tâches les moins contraignantes. Peut finir par affamer les tâches plus exigeantes en ressources. Ce problème peut-être contourné en utilisant la politique "Premier arrivé, premier servi"
+
+- Processus:
+	Concept représentant un programme en cours d'exécution. Ce programme s'éxécutant a une entrée, une sortie et un état (élu, prêt, bloqué).
+	
+- Processus fils ou enfant:
+	Un processus peut engendrer d'autres processus, formant ainsi une hiérarchie.
+
+- Processus légers:
+	Autre nom pour les threads (le fonctionnement des threads par rapport à un processus et en partie comparable au fonctionnement des processus par rapport à la machine).
+
+- Projection/mappage en mémoire:
+	Pour un périphérique projeté/mappé en mémoire, ses registres de contrôle se voient attribuer une adresse mémoire qui n'est pas utilisée par la mémoire physique.
+
+- Protocole:
+	Ensemble de règles définissant des échanges de données pour assurer une interopérabilité.
+
+- Protocole de cohérence de cache:
+	Règles régissant la communication entre processeurs pour assurer la cohérence de l'utilisation de la mémoire.
+
+- Quantum:
+	Intervalle de temps (cyclique) pendant lequel un processus dispose du processeur.
+
+- RAM:
+	La mémoire RAM (pour Random Acces Memory) est la mémoire vive de l'ordinateur. Relativement rapide, elle est éphémère et est vidée lors de la mise sous tension de l'ordinateur.
+
+- Registre CS:
+	Registre contenant le sélecteur de segment de code.
+
+- Registre DS:
+	Registre contenant le segment de données.
+
+- Répertoire courant (fichiers):
+	Répertoire dans lequel on se trouve à un instant donné de la navigation dans le système de fichier.
+	
+- Répertoire de travail courant:
+	Répertoire de travail pour un processus donné.
+
+- Répertoire racine:
+	Somment de la hiérarchie du système de fichier.
+
+- Répertoire racine (fichiers):
+	Répertoire contenant tout les fichiers du système.
+
+- Réseau oméga:
+	Réseau de commutateurs multiniveaux utilisant 12 commutateurs pour connecter 8 processeurs à 8 mémoires.
+
+- Réseaux de commutateurs multiniveaux:
+	Architecture composée de commutateurs disposés par niveaux.
+
+- Ressource non retirable:
+	Ressource ne pouvant être retirée du processus auquel elle appartient sans que le processus échoue. (exemple: graveur de DVD)
+
+- Ressource retirable:
+	Ressource pouvant être retirée sans dommage du processus auquel elle appartient. (exemple: la mémoire)
+
+- ROM:
+	La ROM est la mémoire morte de la machine, la mémoire qui persiste même si l'appareil est mis sous tension. L'accès à la ROM est plus lent que l'accès à la RAM. Cela peut être un disque dur sur un PC.
+
+- Routage en mode "trou de vert":
+	Variation de la commutation de circuits. Scinde les paquets en sous-paquets et permet ainsi aux premiers sous-paquets d'être envoyés avant que le chemin ne soit totalement établi
+
+- Routeur:
+	Le routeur est un équipement destiné à orienter les données entre deux ou plusieurs systèmes à travers un réseau.
+
+- RPC:
+	Appel de procédure à distance. Une première machine demande à une seconde d'exécuter une procédure sans qu'aucune entrée/sortie ne soit connue de l'utilisateur
+
+- SATA:
+	Désigne un bus utilisé pour connecter une mémoire de masse de type disque dur au processeur.
+
+- Section critique:
+	Une section critique est un bloc d'instructions éxécuté par un processus. Plusieurs processus ne doivent pas être dans leur section critique en même temps. 
+
+- Segment de données:
+	Partie de l'espace mémoire du processus contenant les variables du processus.
+
+- Segment de pile:
+	Partie de l'espace mémoire du processus contenant la pile d'exécution du programme. Cette pile contient les informations concernant les fonctions appellées.
+
+- Segment de texte:
+	Partie de l'espace mémoire du processus contenant le code du programme.
+
+- Segments:
+	Un segment est un espace d'adressage qui permet de séparer la mémoire afin d'éviter les conflits d'occupation de mémoire. 
+
+- Sémaphore:
+	Un sémaphore est une structure de données qui permet de compter les appels à wake pour éviter de perdre ceux qui sont éfféctués sur un processus évéillé.
+
+- Serveur de réincarnation:
+	Son rôle consiste à vérifier si les autres serveurs et pilotes sont fonctionnellement corrects. Si un problème se présente, les instances concernées sont remplacés automatiquement.
+
+- Serveurs:
+	Dans le modèle client-serveur, offre des services utilisés par les clients.
+
+- Shell:
+	Le Shell est un programme qui ne fait pas partie du système d'exploitation. Ce programme fournit une interface utilisateur pour interagir avec le système d'exploitation afin de le faire exécuter certaines tâches.
+
+- Spin lock:
+	Mécanisme de synchronisation basé sur l'attente active.
+
+- SMP:
+	Symetric MultiProcessor. Il n'existe qu'une copie du système d'exploitation dans la mémoire, mais chaque processeur peut l'executer.
+
+- Spool:
+	Le spoolage consiste à mettre dans une file d'attente des informations à destination d'un périphérique donné afin qu'elles soient traitées les unes après les autres, ceci afin d'éviter de saturer les processus.
+
+- Stub serveur:
+	Bibliothèque gérant la procédure appellée dans le cas d'un RPC
+
+- Stub client:
+	Bibliothèque gérant la procédure appellante dans le cas d'un RPC
+
+- Superbloc:
+	Zone du disque dur qui contient tous les paramètres clefs du système de fichier de la partition.
+
+- Super-utilisateur:
+	Cet utilisateur particulier peut outrepasser certaines règles de protection du système.
+
+- Swap:
+	Consiste à écrire sur le disque dur les données d'un processus en cours afin de libérer de la RAM pour un autre processus. Cette image est restaurée au moment où ce processus reprend la main.
+
+- Système d'exploitation hôte:
+	Système d'exploitation de l'hyperviseur
+
+- Système d'exploitation invité:
+	Système d'exploitation de la machine virtuelle
+
+- Système distribué:
+	Un tel système ressemble à un multi-ordinateur, par contre chaque noeud représente une machine complète pouvant même exécuter différents systèmes d'exploitation et être géré par différents administrateurs
+
+- Table de pages fantômes:
+	Mappage des pages mémoire mises à disposition des machines virtuelles avec les pages mémoire mises à disposition de l'hyperviseur
+
+- Table de threads:
+	De la même façon que le système possède une table de processus pour gérer les différents processus en cours, il est nécéssaire de maintenir à jour une table de threads permettant de conserver les informations relatives à ces threads pour en sauvegarder l'état et les redémarrer. La table de threads est gérée par le système d'exploitation dans le cas de threads en mode noyau, et dans le cas de threads en mode utilisateur c'est le processus concerné qui gère cette table.
+
+- Table des processus:
+	Table de structures maintenue par le système contenant une entrée par processus. Contient toutes les informations sur un processus en cours afin d'en sauvegarder l'état et de lui permettre de redémarrer en cas d'interruption.
+
+- Temps partagé:
+	Les processus exécutés par temps partagé se voient attribuer une durée de temps pendant laquelle il sont exécutés avant d'être mis en pause pour laisser les autres processus s'exécuter. Les processus en mémoire sont ainsi exécutés progressivement et tour à tour.
+
+- Thread spontané:
+	Thread sans historique, plus facile à créer et récupérer/détruire.
+
+- Threads:
+	Mini-processus dans le processus. Ces mini-processus partagent le même espace d'adressage que le processus principal ce qui permet le partage des donnés. Aucune ressource ne leur étant particulièrement atribué, la création et la suppression d'un thread est bien plus rapide que celle d'un processus. 
+
+- TLB:
+	Mémoire associative rend les accès mémoires suffisamment rapides.
+
+- Tops d'horloge:
+	Interruptions périodiques de l'horloge
+
+- Traitement par lots (batch):
+	Le traitement par lots désigne un ensemble d'opérations exécutées sans intervention de l'utilisateur. Ce sont souvent des tâches répétitives et consommatrices de ressources, qui tournent en arrière-plan de préférence hors temps de travail.
+
+- UC:
+	Unité centrale. Ensemble du matériel constituant un ordinateur, monté dans un chassis.
+
+- UEFI FAT:
+	Table contenant les informations permettant de chaîner les blocs d'une liste chaînée.
+
+- UMA:
+	Uniform memory access. Architecture de bus pour addresser la mémoire.
+
+- Upcall:
+	Appels du système d'éxécution depuis le système d'exploitation. Le contraire d'un appel système.
+
+- USB:
+	Bus de connexion permettant la connexion de périphériques à chaud ainsi que le plug and play. Il permet aussi à l'ordinateur d'alimenter en énergie les petits appareils de type clef USB.
+
+- Vecteur d'interruption:
+	Emplacement de mémoire pointant sur une routine d'interruption correspondant à une requête d'interruption liée à l'acceptation d'une interruption matérielle ou logicielle.
+
+- Verrouillage en deux phases:
+	Consiste pour un processus à tenter de verrouiller une à une toutes les ressources dont il a besoin, c'est une sorte de réservation. Si cette première phase est menée à terme, lors de la seconde il consomme ces ressources et les libère.
+
+- Virtualisation:
+	Fait de rassembler différents serveurs sur une même machine tout en se prémunisant contre l'arrêt total de la machine en cas de crash d'une des machines virtuelle. Permet de faire fonctionner des systèmes d'exploitation différents sur une même machine.
+
+- VT:
+	Virtualisation technologie
+

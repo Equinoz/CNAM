@@ -1,0 +1,26 @@
+Exercice 1 : Qu’est-ce que la multiprogrammation ?
+	La multiprogrammation permet l'execution de plusieurs programmes en même temps sur le même système d'exploitation. Ainsi si un programme n'utilise que partiellement le processeur, un ou plusieurs autres programmes peuvent être exécutés simultanément. Le terme de "taux de multiprogrammation" désigne le nombre de programmes exécutables en simultané. L'apparition de la multiprogrammation a posé de nombreux problèmes de partage des ressources de la mémoire et du processeur.
+
+
+Exercice 2 : Qu’est-ce que le spoolage?
+	Le spoolage consiste à mettre dans une file d'attente des informations à destination d'un périphérique donné afin qu'elles soient traitées les unes après les autres. Un premier processus met les informations en attente tandis qu'un deuxième processus les lit et les envoie au périphérique concerné. Cette file d'attente est traité comme une file, premier entré-premier sorti. Ainsi le processus à l'origine de la création des informations ne se retrouve pas saturé (la nouvelle information est stockée dans le spool) et peut continuer à exécuter d'autres calculs.
+
+
+Exercice 3 : Sur les premiers ordinateurs chaque octet de données lu- ou écrit était géré par l’UC. Quelles conséquences cela a-t-il sur la multiprogrammation ?
+	Un tel système ne permet pas l'accès direct à la mémoire d'un périphérique donné (DMA). C'est donc le CPU qui doit relayer l'écriture et la lecture de ses informations ce qui mobilise nécéssairement plus le CPU. L'exécution de plusieurs process simultanés est donc rendu plus difficile vu que le temps alloué par l'ordonnanceur à chaque process est compté (ordonnancement préemptif). Si c'est un ordonnancement collaboratif, le CPU mettra plus de temps à exécuter le process, ralentissant d'autant les process suivants.
+
+
+Exercice 4 : Un ordinateur possède un pipeline à quatre niveaux. Chaque niveau met le même temps (1 ns) à s’exécuter. Combien d’instruction par seconde cette machine est-elle capable d’exécuter ?
+	Un pipeline à quatre niveaux permet de traiter simultanément 4 instructions a des stades différentsde traitement. Le fait qu'il y ait plus de niveaux ne permet pas à l'instruction elle-même d'être traitée plus rapidement, par contre le débit du processeur est accéléré. Si le dernier niveau prend 1 ns, Une nouvelle instruction est traitée chaque ns. Donc 1 milliard d'instruction peuvent être traitées en une seconde.
+
+
+Exercice 5 : Un relecteur remarque une faute d’orthographe répétée dans un ouvrage. Le livre fait à peu près 700 pages, contenant chacune 50 lignes de 80 caractères. Combien de temps prendra la vérification électronique du livre entier, si on suppose que la totalité du texte est (tour à tour) dans chacun des niveaux suivants :
+On considèrera pour les méthodes de stockage interne que le temps d’accès est donné par caractères ; pour les disques, on le supposera donné par bloc de 1024 caractères ; pour les bandes et les cartouches le temps donné est celui pris pour atteindre les données lors du premier accès, les accès suivants se faisant dans le même temps que pour les disques.    
+
+	700 pages * 50 lignes * 80 caractères = 2800000 caractères
+
+	- Registres: 2.8 millisecondes
+	- Cache: 5.6 millisecondes
+	- RAM: 28 millisecondes
+	- Disque magnétique: 27.343 secondes
+	- Bande magnétique: 2 minutes 7.343 secondes
