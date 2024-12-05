@@ -1,1 +1,0 @@
-Après avoir crée un compte utilisateur avec des droits sudo sur mon serveur virtuel Debian, je me suis assuré de pouvoir m'y connecter via SSH afin de pouvoir confortablement faire toutes les manipulations requises à l'installation de passbolt.

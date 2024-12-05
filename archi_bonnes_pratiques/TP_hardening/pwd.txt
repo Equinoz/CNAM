@@ -1,0 +1,10 @@
+﻿Newroot!
+
+cp /var/log/lynis.log /media/current
+
+sudo lynis audit system -–quick
+
+
+- durcissement boot loader
+- amélioration droits donnés aux fichiers
+- restriction USB
