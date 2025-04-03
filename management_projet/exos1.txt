@@ -1,0 +1,54 @@
+1.1
+Offrir un nouveau service de Cloud à ses clients
+Respecter les objectifs écologiques et RSE de l'entreprise
+
+1.2
+Etude de faisabilité
+Cahier des charges
+Backlog produit
+MVP
+Documentation utilisateur
+
+1.3
+Equipes de développement
+Actionnaires
+Client 
+Clients à venir
+Partenaires technologiques
+
+2.1
+Déjà positionnée sur le marché des PME, les solutions cloud sont des solutions qui se développent, surtout pour des entreprises internationnales. Le fait de se positionner aussi sur ce terrain là est cohérent avec leurs services. Propose une offre de marché plus complète, pour séduire plus d'utilisateurs en prenant en compte les tendances générales
+
+2.2
+Etude de marché
+Achat de matériel (datas-centers)
+Embauche
+Equipe de développement
+Marketing
+Maintenance à long terme
+
+2.3
+Choix de technologies matures, scalabilité, tests d'intrusion
+
+2.4
+Responsables de projet, de gestion du parc matériel, développement, marketing, à terme équipe de maintenance. Voir les capacités en interne, envisager de sous-traiter, former
+
+3.1
+Risque de dépassement de budget: contrôler le budget au plus près, compte-rendu de dépenses 
+Risque de dépassement de temps: prévoir une marge, établir un diagramme de Gantt, réaliser des réunions de suivis régulières
+Risques organisationnels: s'assurer que tout le monde sache bien ce qu'il a à faire, claire répartition des tâches, formations continue
+
+3.2
+Retour sur investissement, parts de marché, suivi du calendrier, enquêtes satisfaction
+
+4.1
+Référents projet dans chaque domaine, réunion régulières, mail et affiches d'information, rapports réguliers
+
+4.2
+Goodies, réunions inter-domaines, environnements collaboratifs, objectifs clairs
+
+5.1
+S'assurer que le produit soit prêt à temps, former des commerciaux, préparer une campagne marketinginauguration, démonstration, tests de charge
+
+5.2
+ROI, parts de marchés, satisfaction client (enquêtes), prendre la température auprès du service client

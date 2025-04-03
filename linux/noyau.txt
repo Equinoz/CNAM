@@ -1,0 +1,62 @@
+﻿Exercice 1:
+
+1)
+argv -> environnement
+argc -> environnement
+indice -> data
+ptn -> bss
+i, j -> pile
+str -> pile
+k -> pile
+
+2) Le tas
+
+
+Exercice 5:
+1)
+A 6
+B 4
+C 14
+D 2
+
+A 6
+B 10
+C 24
+D 26
+
+2)
+A 2
+B 2
+C 2
+D 2
+A 2
+B 2
+C 2
+A 2
+C 10
+
+A 16
+B 12
+C 26
+D 8
+
+3)
+C A B D
+
+A 20
+B 24
+C 14
+D 26
+
+4)
+B 4
+A 6
+C 2
+D 2
+C 12
+
+A 10
+B 4
+C 26
+D 14
+

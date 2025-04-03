@@ -1,0 +1,46 @@
+Identité des acteurs :
+Les acteurs d'un projet sont des individus ou des groupes ayant un intérêt, une influence ou un responsabilité dans le projet. Ils sont parties-prenantes, peuvent être internes ou externes et leur identifcation ainsi que leur collaboration est essentielle. La communication est donc un point essentiel en ce qui concerne les acteurs.
+
+Parties prenantes internes :
+	- MOA (maître d'ouvrage) commanditaire du projet, représente souvent l'utilisateur final. Défini les besoins, les objectifs, valide les résultat. Souvent finance également.
+	- MOE (maître d'oeuvre) responsable de la réalisation technique du projet.
+	- Chef de projet intermédiaire entre MOA et MOE, planifie, organise, coordonne les ressources humaines, financières et techniques.
+	- Equipe projet membres impliqués dans la réalisation du projet.
+	- Sponsor
+
+Parties prenantes externes :
+	- Sponsor
+	- Client
+	- Fournisseurs, sous-traitants
+	- Régulateurs, organismes de certification
+	- Utilisateurs finaux
+	- Personnes localement concernées
+	- Liste non exhaustive
+
+Gestion des acteurs :
+Il est essentiel de n'oublier personne pour s'assurer de disposer des meilleurs conditions pour réaliser le projet. Une fois tous les acteurs identifiés, il faut les cartographier et établir un plan d'actions personnalisé pour chacun d'eux.
+
+On peut utiliser une matrice d'influence et d'intérêt pour mieux discerner les enjeux mais aussi une analyse SWOT, plus transversalle pour identifier les forces, opportunités, faiblesses et menaces.
+TODO matrice influence/intérêt 
+TODO SWOT
+
+Communication, engagement, gestion des conflits :
+	- Organiser des réunions régulières
+	- Utiliser des outils collaboratifs
+	- Définir des rôles et des responsabilité clairs
+
+Aucune gestion ne peut garantir l'absence de conflits. Pour les résoudre :
+	- Médiation
+	- Communication assertive
+	- Négociation
+
+Le projet en tant que contrat et constellation d'acteurs :
+Une constellation d'acteurs est un ensemble d'acteurs interdépendants qui interagissent autour d'un projet. Ils peuvent collaborer, s'influencer ou entrer en concurrence selon leurs intérêts et objectifs.
+TODO graphique
+
+Compétences du chef de projet :
+	- Compétences techniques, pas exhaustives mais capable de lire, comprendre et analyser des outils de gestion type diagramme de Gantt
+	- Compétences interrelationnelles, communication, adaptabilité, capacité à motiver et fédérer, gestion de son propre stress
+	- Pilotage, gestion des aléas, savoir déléguer, gestion du temps, des dépenses
+	- Leadership, favorisant le pilotage
+

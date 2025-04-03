@@ -1,0 +1,25 @@
+1) 4 opérations mathématiques: ADD SUB IMUL IDIV
+	débranchement conditionnel: JZ label
+	lecture/écriture: MOV
+
+2) IN et OUT
+
+3) INT num, IRET, CLI, STI
+
+1sec / 8
+
+Hors tension on perd les informations en mémoire dynamique (RAM) contrairement à la memoire statique (genre disque dur)
+
+Mémoire statique en read only permettant de stocker les informations servant à démarrer le système
+
+3 types, mémoire située entre processeur et RAM. Mémoire plus rapide que la RAM
+
+Mémoire RAM stocké en pages mémoire sur le disque pour augmenter la capacité de la mémoire vive (partition swap sur Linux)
+
+Unité physique de lecture/écriture du disque dur, d’un nombre d’octet fixe
+
+Numérotation logique des secteurs de 1 à n, le secteur 0 contenant les informations sur les pistes et les secteurs
+
+Unité de stockage d’un système de fichier
+
+4

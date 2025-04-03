@@ -1,0 +1,93 @@
+Il existe plusieurs modèles d'organisation de projets. Ils ont leurs avantages et leurs inconvénients et doivent être choisis selon la nature du projet, ses contraintes et ses horizons. Un tel modèle répond aux problématiques de rôles/responsabilités, communication, optimisation des ressources et prise de décisions
+Cinq modèles souvent distingués:
+- Modèle hiérarchique
+	Organisation divisée en fonctions spécialisées, regroupées par grande fonction
+	Forte hiérarchie et communication verticale
+	Plusieurs départements contribuent, souvent composé d'employés permanents
+
+	Avantages:
+	- Spécialisation des fonctions
+	- Clarté des rôles et responsabilités
+	- Gestion optimisée des ressources par fonction
+
+	Inconvénients:
+	- Lenteur de prise de décision
+	- Flexibilité limitée
+	- Communication rendue difficile
+
+	TODO illustration
+
+- Modèle matriciel
+	Combinaison de structure fonctionnelle et par projet
+	Plusieurs départements impliqués et autorité partagée entre le chef de projet et les responsables fonctionnels
+	Permet de réaliser des projets en série ou en parrallèle en mettant à disposition des projets les ressources requises
+	Un projet se met en place après concertation du chef de projet et des services fonctionnels. Les spécialistes sont détachés et réintégreront leurs service d'origine à l'issue du projet
+	L'axe métier gère la formation du personnel, la gestion des effectifs, la gestion des charges et les moyens
+	L'axe projet gère le client, l'entreprise, le management du groupe projet, les performances techniques, la qualité, la maitrîse des délais et la tenue des coûts
+	On se retrouve avec une double hiérarchie, une autorité partagée et une collaboration interfonctionnelle
+
+	Avantages:
+	- Meilleure gestion des ressources
+	- Fléxibilité
+	- Compétences mises au service des projets
+
+	Inconvénients:
+	- Confusion des responsabilités
+	- Complexité de gestion
+	- Conflits de priorités
+
+	TODO illustration
+
+- Modèle par projet
+	Organisation centrée sur les projets. Le chef de projet a un contrôle total sur les ressources, le budget et les membres de l'équipe. Utile lors de gros projets stratégiques qui nécessitent une concentration totale et une forte coordination. L'équipe est totalement dédiée sur le projet. C'est ine structure flexible et réactive
+
+	Avantages:
+	- Autonomie
+	- Efficacité
+	- Flexibilité et réactivité
+
+	Inconvénients:
+	- Dépendance aux projets
+	- Manque de coordination
+	- Mobilisation exclusive des ressources
+	- Isolement du projet par rapport à l'entreprise
+	- Risque de ne pas réaffecter les ressources à l'issue du projet
+
+	TODO illustration
+
+- Modèle Agile
+	Approche itérative et incrémentale. Met l'accent sur la flexibilité, l'amélioration continue et l'implication des parties prenantes. Plusieurs méthodes s'appuient sur ce modèle: Scrum, Kanban, SAFe....
+	Projets divisés en sprints
+	Réunions fréquentes et échanges continus entre parties prenantes
+	Livraisons continues
+	Equipe auto-organisées et collaboratives
+
+	- Avantages:
+	Flexibilité
+	Livraisons rapide de résultats partiels
+	Collaboration continue
+
+	- Inconvénients:
+	Difficile de maintenir une vision à long terme
+	Manque de structure en cas de définition incomplète des processus
+	Dépendance au client pour les retours
+
+	- Modèle Lean
+		Modèle inspiré des principes de gestion de production allégée, qui se concentre sur l'optimisation des ressources. Utile pour améliorer les processus ou créer de la valeur à moindre coût. Atetntion particulière accordée à l'amélioration continue et à l'innovation
+
+		- Avantages:
+		Réduction des coûts et optimisation
+		Amélioration des processus
+		Réalisation rapide des objectifs
+
+		- Inconvénients:
+		Résistance au changement
+		Difficile à mettre en oeuvre sans soutien significatif de la direction
+
+Pour choisir un modèle d'organisation, il faut tenir compte de plusieurs paramètres tels que la taille du projet, la complexité ou l'incertitude, la maturité de l'organisation en matière ed gestion de projet, le niveau d'autorité confié au chef de projet et l'organisation de l'entreprise.
+Selon les modèles le chef de projet disposera de plus ou moins d'autorité.
+
+TODO dernier truc
+
+Une structure fonctionnelle s'adapte mieux aux projets simples nécessitant un forte expertise, une structure matricielle permet d'optimiser les ressources et la flexibilité sur plusieurs projets et la structure purement projet convient aux initiatives stratégiques, avec une équipe dédiée.
+

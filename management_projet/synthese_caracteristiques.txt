@@ -1,0 +1,37 @@
+Un projet présente plusieurs caractéristiques. La prise en compte de ces caractéristiques augmente les chances de réussite de ce projet.
+Caractéristiques:
+	- Objectif précis
+	- Unique
+	- Provisoire
+	- Coordination d'un ensemble d'activités
+
+L'acronyme SMART désigne une méthode de définition d'objectifs définie par Georges T. Doran pour créer un plan d'action efficace. SMART se réfère à:
+	- Spécifique
+	- Mesurable
+	- Atteignable
+	- Réaliste
+	- Temporellement défini
+
+S'assurer qu'un projet puisse répondre à ses exigences, c'est garantir un certain nombre de chances de succès pour le bon déroulement de ce projet.
+
+En ce qui concerne l'objectif, il faut bien faire la part des choses entre le client final et le "maître d'ouvrage". C'est au maître d'ouvrage qu'il faudra rendre des comptes.
+
+L'ojectif du projet est précisé dans un document contractuel, le cahier des charges. Il peut être plus ou moins bien détaillé, et présenté un objectif final ou intermédiaire.
+
+Les projets peuvent être qualifiés de grand, moyen ou petit selon le nombre de parties prenantees, le budget ou la durée. Il y a 3 types de projets:
+	- ouvrage
+	- produit
+	- organisationnel/événementiel
+
+Le projet est décrit au travers de ses élément constitutifs qui sont:
+	- périmètre
+	- contraintes
+	- enjeux
+	- risques
+	- jalons
+	- livrables
+	- coûts
+	- date cible
+
+Chacun de ses élément représente des enjeux, des faiblesses ou des moyens de contrôler le bon déroulement du projet.
+

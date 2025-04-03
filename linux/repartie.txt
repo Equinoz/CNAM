@@ -1,0 +1,19 @@
+1- Client ultra-léger émulant un ordinateur distant sur le poste de travail
+
+2- Telnet - VNC
+
+3- Plus de machines à sécuriser, plus de machine potentiellement différente à mettre à jour. Ergonomie, répartition des tâches et scalabilité
+
+4- RMI - Corba
+
+5- AppServer - WebSphere
+
+6- Application orientée messages utilisants des middlewares
+
+7- Les infrastructures d'accès intégrées incluent des systèmes qui contrôlent l'accès aux informations et la disponibilité des données.
+
+8- Slack - Google WorkSpace
+
+
+Client - serveur
+
